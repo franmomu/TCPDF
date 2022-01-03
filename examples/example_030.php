@@ -72,9 +72,9 @@ $pdf->setFont('helvetica', 'B', 20);
 // --- first page ------------------------------------------
 
 // add a page
-$pdf->AddPage();
+$pdf->addPage();
 
-$pdf->Cell(0, 0, 'TCPDF Gradients', 0, 1, 'C', 0, '', 0, false, 'T', 'M');
+$pdf->cell(0, 0, 'TCPDF Gradients', 0, 1, 'C', 0, '', 0, false, 'T', 'M');
 
 // set colors for gradients (r,g,b) or (grey 0-255)
 $red = array(255, 0, 0);
@@ -88,25 +88,25 @@ $black = array(0);
 $coords = array(0, 0, 1, 0);
 
 // paint a linear gradient
-$pdf->LinearGradient(20, 45, 80, 80, $red, $blue, $coords);
+$pdf->linearGradient(20, 45, 80, 80, $red, $blue, $coords);
 
 // write label
-$pdf->Text(20, 130, 'LinearGradient()');
+$pdf->text(20, 130, 'LinearGradient()');
 
 // set the coordinates fx,fy,cx,cy,r of the gradient (see radial_gradient_coords.jpg)
 $coords = array(0.5, 0.5, 1, 1, 1.2);
 
 // paint a radial gradient
-$pdf->RadialGradient(110, 45, 80, 80, $white, $black, $coords);
+$pdf->radialGradient(110, 45, 80, 80, $white, $black, $coords);
 
 // write label
-$pdf->Text(110, 130, 'RadialGradient()');
+$pdf->text(110, 130, 'RadialGradient()');
 
 // paint a coons patch mesh with default coordinates
-$pdf->CoonsPatchMesh(20, 155, 80, 80, $yellow, $blue, $green, $red);
+$pdf->coonsPatchMesh(20, 155, 80, 80, $yellow, $blue, $green, $red);
 
 // write label
-$pdf->Text(20, 240, 'CoonsPatchMesh()');
+$pdf->text(20, 240, 'CoonsPatchMesh()');
 
 // set the coordinates for the cubic Bézier points x1,y1 ... x12, y12 of the patch (see coons_patch_mesh_coords.jpg)
 $coords = array(
@@ -119,13 +119,13 @@ $coords_min = 0;   //minimum value of the coordinates
 $coords_max = 1;   //maximum value of the coordinates
 
 // paint a coons patch gradient with the above coordinates
-$pdf->CoonsPatchMesh(110, 155, 80, 80, $yellow, $blue, $green, $red, $coords, $coords_min, $coords_max);
+$pdf->coonsPatchMesh(110, 155, 80, 80, $yellow, $blue, $green, $red, $coords, $coords_min, $coords_max);
 
 // write label
-$pdf->Text(110, 240, 'CoonsPatchMesh()');
+$pdf->text(110, 240, 'CoonsPatchMesh()');
 
 // --- second page -----------------------------------------
-$pdf->AddPage();
+$pdf->addPage();
 
 // first patch: f = 0
 $patch_array[0]['f'] = 0;
@@ -173,15 +173,15 @@ $patch_array[3]['colors'][1] = array('r' => 0, 'g' => 0, 'b' => 255);
 $coords_min = 0;
 $coords_max = 2;
 
-$pdf->CoonsPatchMesh(10, 45, 190, 200, '', '', '', '', $patch_array, $coords_min, $coords_max);
+$pdf->coonsPatchMesh(10, 45, 190, 200, '', '', '', '', $patch_array, $coords_min, $coords_max);
 
 // write label
-$pdf->Text(10, 250, 'CoonsPatchMesh()');
+$pdf->text(10, 250, 'CoonsPatchMesh()');
 
 // ---------------------------------------------------------
 
 //Close and output PDF document
-$pdf->Output('example_030.pdf', 'D');
+$pdf->output('example_030.pdf', 'D');
 
 //============================================================+
 // END OF FILE

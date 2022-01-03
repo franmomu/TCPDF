@@ -70,7 +70,7 @@ if (@file_exists(dirname(__FILE__).'/lang/eng.php')) {
 $pdf->setFont('times', '', 14);
 
 // add a page
-$pdf->AddPage();
+$pdf->addPage();
 
 // print a some of text
 $text = 'This is an example of <strong>JavaScript</strong> usage on PDF documents.<br /><br />For more information check the source code of this example, the source code documentation for the <i>IncludeJS()</i> method and the <i>JavaScript for Acrobat API Reference</i> guide.<br /><br /><a href="http://www.tcpdf.org">www.tcpdf.org</a>';
@@ -96,12 +96,12 @@ EOD;
 $js .= 'print(true);';
 
 // set javascript
-$pdf->IncludeJS($js);
+$pdf->includeJS($js);
 
 // ---------------------------------------------------------
 
 //Close and output PDF document
-$pdf->Output('example_053.pdf', 'D');
+$pdf->output('example_053.pdf', 'D');
 
 //============================================================+
 // END OF FILE

@@ -69,7 +69,7 @@ if (@file_exists(dirname(__FILE__).'/lang/eng.php')) {
 // set font
 $pdf->setFont('helvetica', '', 12);
 
-$pdf->AddPage();
+$pdf->addPage();
 
 $html = <<<EOD
 Example of ImageEPS() method for AI and EPS images<br />
@@ -79,12 +79,12 @@ EOD;
 // Print text using writeHTMLCell()
 $pdf->writeHTMLCell(0, 0, '', '', $html, 0, 1, 0, true, '', true);
 
-$pdf->ImageEps('images/tcpdf_box.ai', 10, 40, 150, '', 'http://www.tcpdf.org', true, '', '', 0, false);
+$pdf->imageEps('images/tcpdf_box.ai', 10, 40, 150, '', 'http://www.tcpdf.org', true, '', '', 0, false);
 
 // ---------------------------------------------------------
 
 //Close and output PDF document
-$pdf->Output('example_032.pdf', 'I');
+$pdf->output('example_032.pdf', 'I');
 
 //============================================================+
 // END OF FILE

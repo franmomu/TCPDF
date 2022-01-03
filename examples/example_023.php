@@ -73,7 +73,7 @@ $pdf->setFont('times', 'BI', 14);
 $pdf->startPageGroup();
 
 // add a page
-$pdf->AddPage();
+$pdf->addPage();
 
 // set some text to print
 $txt = <<<EOD
@@ -84,29 +84,29 @@ This is the first page of group 1.
 EOD;
 
 // print a block of text using Write()
-$pdf->Write(0, $txt, '', 0, 'L', true, 0, false, false, 0);
+$pdf->write(0, $txt, '', 0, 'L', true, 0, false, false, 0);
 
 // add second page
-$pdf->AddPage();
-$pdf->Cell(0, 10, 'This is the second page of group 1', 0, 1, 'L');
+$pdf->addPage();
+$pdf->cell(0, 10, 'This is the second page of group 1', 0, 1, 'L');
 
 // Start Second Page Group
 $pdf->startPageGroup();
 
 // add some pages
-$pdf->AddPage();
-$pdf->Cell(0, 10, 'This is the first page of group 2', 0, 1, 'L');
-$pdf->AddPage();
-$pdf->Cell(0, 10, 'This is the second page of group 2', 0, 1, 'L');
-$pdf->AddPage();
-$pdf->Cell(0, 10, 'This is the third page of group 2', 0, 1, 'L');
-$pdf->AddPage();
-$pdf->Cell(0, 10, 'This is the fourth page of group 2', 0, 1, 'L');
+$pdf->addPage();
+$pdf->cell(0, 10, 'This is the first page of group 2', 0, 1, 'L');
+$pdf->addPage();
+$pdf->cell(0, 10, 'This is the second page of group 2', 0, 1, 'L');
+$pdf->addPage();
+$pdf->cell(0, 10, 'This is the third page of group 2', 0, 1, 'L');
+$pdf->addPage();
+$pdf->cell(0, 10, 'This is the fourth page of group 2', 0, 1, 'L');
 
 // ---------------------------------------------------------
 
 //Close and output PDF document
-$pdf->Output('example_023.pdf', 'I');
+$pdf->output('example_023.pdf', 'I');
 
 //============================================================+
 // END OF FILE

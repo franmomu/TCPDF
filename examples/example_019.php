@@ -77,7 +77,7 @@ $pdf->setLanguageArray($lg);
 $pdf->setFont('helvetica', '', 12);
 
 // add a page
-$pdf->AddPage();
+$pdf->addPage();
 
 // set color for background
 $pdf->setFillColor(200, 255, 200);
@@ -86,12 +86,12 @@ $txt = 'An alternative configuration file is used on this example.
 Check the definition of the K_TCPDF_EXTERNAL_CONFIG constant on the source code.';
 
 // print some text
-$pdf->MultiCell(0, 0, $txt."\n", 1, 'J', 1, 1, '', '', true, 0, false, true, 0);
+$pdf->multiCell(0, 0, $txt."\n", 1, 'J', 1, 1, '', '', true, 0, false, true, 0);
 
 // ---------------------------------------------------------
 
 //Close and output PDF document
-$pdf->Output('example_019.pdf', 'I');
+$pdf->output('example_019.pdf', 'I');
 
 //============================================================+
 // END OF FILE

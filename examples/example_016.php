@@ -111,7 +111,7 @@ if (@file_exists(dirname(__FILE__).'/lang/eng.php')) {
 $pdf->setFont('times', '', 16);
 
 // add a page
-$pdf->AddPage();
+$pdf->addPage();
 
 // set some text to print
 $txt = <<<EOD
@@ -121,13 +121,13 @@ Consult the source code documentation for the SetProtection() method.
 EOD;
 
 // print a block of text using Write()
-$pdf->Write(0, $txt, '', 0, 'L', true, 0, false, false, 0);
+$pdf->write(0, $txt, '', 0, 'L', true, 0, false, false, 0);
 
 
 // ---------------------------------------------------------
 
 //Close and output PDF document
-$pdf->Output('example_016.pdf', 'D');
+$pdf->output('example_016.pdf', 'D');
 
 //============================================================+
 // END OF FILE

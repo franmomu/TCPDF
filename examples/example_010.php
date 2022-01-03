@@ -41,17 +41,17 @@ class MC_TCPDF extends TCPDF {
 	 * @param boolean $mode if true the chapter body is in HTML, otherwise in simple text.
 	 * @public
 	 */
-	public function PrintChapter($num, $title, $file, $mode=false) {
+	public function printChapter($num, $title, $file, $mode=false) {
 		// add a new page
-		$this->AddPage();
+		$this->addPage();
 		// disable existing columns
 		$this->resetColumns();
 		// print chapter title
-		$this->ChapterTitle($num, $title);
+		$this->chapterTitle($num, $title);
 		// set columns
 		$this->setEqualColumns(3, 57);
 		// print chapter body
-		$this->ChapterBody($file, $mode);
+		$this->chapterBody($file, $mode);
 	}
 
 	/**
@@ -60,11 +60,11 @@ class MC_TCPDF extends TCPDF {
 	 * @param string $title chapter title
 	 * @public
 	 */
-	public function ChapterTitle($num, $title) {
+	public function chapterTitle($num, $title) {
 		$this->setFont('helvetica', '', 14);
 		$this->setFillColor(200, 220, 255);
-		$this->Cell(180, 6, 'Chapter '.$num.' : '.$title, 0, 1, '', 1);
-		$this->Ln(4);
+		$this->cell(180, 6, 'Chapter '.$num.' : '.$title, 0, 1, '', 1);
+		$this->ln(4);
 	}
 
 	/**
@@ -73,7 +73,7 @@ class MC_TCPDF extends TCPDF {
 	 * @param boolean $mode if true the chapter body is in HTML, otherwise in simple text.
 	 * @public
 	 */
-	public function ChapterBody($file, $mode=false) {
+	public function chapterBody($file, $mode=false) {
 		$this->selectColumn();
 		// get esternal file content
 		$content = file_get_contents($file, false);
@@ -86,9 +86,9 @@ class MC_TCPDF extends TCPDF {
 			$this->writeHTML($content, true, false, true, false, 'J');
 		} else {
 			// ------ TEXT MODE ------
-			$this->Write(0, $content, '', 0, 'J', true, 0, false, true, 0);
+			$this->write(0, $content, '', 0, 'J', true, 0, false, true, 0);
 		}
-		$this->Ln();
+		$this->ln();
 	}
 } // end of extended class
 
@@ -135,15 +135,15 @@ if (@file_exists(dirname(__FILE__).'/lang/eng.php')) {
 // ---------------------------------------------------------
 
 // print TEXT
-$pdf->PrintChapter(1, 'LOREM IPSUM [TEXT]', 'data/chapter_demo_1.txt', false);
+$pdf->printChapter(1, 'LOREM IPSUM [TEXT]', 'data/chapter_demo_1.txt', false);
 
 // print HTML
-$pdf->PrintChapter(2, 'LOREM IPSUM [HTML]', 'data/chapter_demo_2.txt', true);
+$pdf->printChapter(2, 'LOREM IPSUM [HTML]', 'data/chapter_demo_2.txt', true);
 
 // ---------------------------------------------------------
 
 //Close and output PDF document
-$pdf->Output('example_010.pdf', 'I');
+$pdf->output('example_010.pdf', 'I');
 
 //============================================================+
 // END OF FILE

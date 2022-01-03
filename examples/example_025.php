@@ -70,10 +70,10 @@ if (@file_exists(dirname(__FILE__).'/lang/eng.php')) {
 $pdf->setFont('helvetica', '', 12);
 
 // add a page
-$pdf->AddPage();
+$pdf->addPage();
 
 $txt = 'You can set the transparency of PDF objects using the setAlpha() method.';
-$pdf->Write(0, $txt, '', 0, '', true, 0, false, false, 0);
+$pdf->write(0, $txt, '', 0, '', true, 0, false, false, 0);
 
 /*
  * setAlpha() gives transparency support. You can set the
@@ -87,7 +87,7 @@ $pdf->setLineWidth(2);
 // draw opaque red square
 $pdf->setFillColor(255, 0, 0);
 $pdf->setDrawColor(127, 0, 0);
-$pdf->Rect(30, 40, 60, 60, 'DF');
+$pdf->rect(30, 40, 60, 60, 'DF');
 
 // set alpha to semi-transparency
 $pdf->setAlpha(0.5);
@@ -95,15 +95,15 @@ $pdf->setAlpha(0.5);
 // draw green square
 $pdf->setFillColor(0, 255, 0);
 $pdf->setDrawColor(0, 127, 0);
-$pdf->Rect(50, 60, 60, 60, 'DF');
+$pdf->rect(50, 60, 60, 60, 'DF');
 
 // draw blue square
 $pdf->setFillColor(0, 0, 255);
 $pdf->setDrawColor(0, 0, 127);
-$pdf->Rect(70, 80, 60, 60, 'DF');
+$pdf->rect(70, 80, 60, 60, 'DF');
 
 // draw jpeg image
-$pdf->Image('images/image_demo.jpg', 90, 100, 60, 60, '', 'http://www.tcpdf.org', '', true, 72);
+$pdf->image('images/image_demo.jpg', 90, 100, 60, 60, '', 'http://www.tcpdf.org', '', true, 72);
 
 // restore full opacity
 $pdf->setAlpha(1);
@@ -111,7 +111,7 @@ $pdf->setAlpha(1);
 // ---------------------------------------------------------
 
 //Close and output PDF document
-$pdf->Output('example_025.pdf', 'I');
+$pdf->output('example_025.pdf', 'I');
 
 //============================================================+
 // END OF FILE

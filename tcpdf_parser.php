@@ -101,11 +101,11 @@ class TCPDF_PARSER {
 	 */
 	public function __construct($data, $cfg=array()) {
 		if (empty($data)) {
-			$this->Error('Empty PDF data.');
+			$this->error('Empty PDF data.');
 		}
 		// find the pdf header starting position
 		if (($trimpos = strpos($data, '%PDF-')) === FALSE) {
-			$this->Error('Invalid PDF data: missing %PDF header.');
+			$this->error('Invalid PDF data: missing %PDF header.');
 		}
 		// get PDF content string
 		$this->pdfdata = substr($data, $trimpos);
@@ -170,7 +170,7 @@ class TCPDF_PARSER {
 		if ($offset == 0) {
 			// find last startxref
 			if (preg_match_all('/[\r\n]startxref[\s]*[\r\n]+([0-9]+)[\s]*[\r\n]+%%EOF/i', $this->pdfdata, $matches, PREG_SET_ORDER, $offset) == 0) {
-				$this->Error('Unable to find startxref');
+				$this->error('Unable to find startxref');
 			}
 			$matches = array_pop($matches);
 			$startxref = $matches[1];
@@ -184,7 +184,7 @@ class TCPDF_PARSER {
 			// startxref found
 			$startxref = $matches[1][0];
 		} else {
-			$this->Error('Unable to find startxref');
+			$this->error('Unable to find startxref');
 		}
 		// check xref position
 		if (strpos($this->pdfdata, 'xref', $startxref) == $startxref) {
@@ -195,7 +195,7 @@ class TCPDF_PARSER {
 			$xref = $this->decodeXrefStream($startxref, $xref);
 		}
 		if (empty($xref)) {
-			$this->Error('Unable to find xref');
+			$this->error('Unable to find xref');
 		}
 		return $xref;
 	}
@@ -267,7 +267,7 @@ class TCPDF_PARSER {
 				$xref = $this->getXrefData(intval($matches[1]), $xref);
 			}
 		} else {
-			$this->Error('Unable to find trailer');
+			$this->error('Unable to find trailer');
 		}
 		return $xref;
 	}
@@ -415,7 +415,7 @@ class TCPDF_PARSER {
 							break;
 						}
 						default: { // PNG prediction (on encoding, PNG optimum)
-							$this->Error('Unknown PNG predictor');
+							$this->error('Unknown PNG predictor');
 							break;
 						}
 					}
@@ -677,7 +677,7 @@ class TCPDF_PARSER {
 	protected function getIndirectObject($obj_ref, $offset=0, $decoding=true) {
 		$obj = explode('_', $obj_ref);
 		if (($obj === false) OR (count($obj) != 2)) {
-			$this->Error('Invalid object reference: '.$obj);
+			$this->error('Invalid object reference: '.$obj);
 			return;
 		}
 		$objref = $obj[0].' '.$obj[1].' obj';
@@ -783,7 +783,7 @@ class TCPDF_PARSER {
 					$emsg = $e->getMessage();
 					if ((($emsg[0] == '~') AND !$this->cfg['ignore_missing_filter_decoders'])
 						OR (($emsg[0] != '~') AND !$this->cfg['ignore_filter_decoding_errors'])) {
-						$this->Error($e->getMessage());
+						$this->error($e->getMessage());
 					}
 				}
 			} else {
@@ -800,7 +800,7 @@ class TCPDF_PARSER {
 	 * @public
 	 * @since 1.0.000 (2011-05-23)
 	 */
-	public function Error($msg) {
+	public function error($msg) {
 		if ($this->cfg['die_for_errors']) {
 			die('<strong>TCPDF_PARSER ERROR: </strong>'.$msg);
 		} else {

@@ -67,7 +67,7 @@ if (@file_exists(dirname(__FILE__).'/lang/eng.php')) {
 // -------------------------------------------------------------------
 
 // add a page
-$pdf->AddPage();
+$pdf->addPage();
 
 // set JPEG quality
 $pdf->setJPEGQuality(75);
@@ -81,12 +81,12 @@ $pdf->setJPEGQuality(75);
 $imgdata = base64_decode('iVBORw0KGgoAAAANSUhEUgAAABwAAAASCAMAAAB/2U7WAAAABlBMVEUAAAD///+l2Z/dAAAASUlEQVR4XqWQUQoAIAxC2/0vXZDrEX4IJTRkb7lobNUStXsB0jIXIAMSsQnWlsV+wULF4Avk9fLq2r8a5HSE35Q3eO2XP1A1wQkZSgETvDtKdQAAAABJRU5ErkJggg==');
 
 // The '@' character is used to indicate that follows an image data stream and not an image file name
-$pdf->Image('@'.$imgdata);
+$pdf->image('@'.$imgdata);
 
 // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 // Image example with resizing
-$pdf->Image('images/image_demo.jpg', 15, 140, 75, 113, 'JPG', 'http://www.tcpdf.org', '', true, 150, '', false, false, 1, false, false, false);
+$pdf->image('images/image_demo.jpg', 15, 140, 75, 113, 'JPG', 'http://www.tcpdf.org', '', true, 150, '', false, false, 1, false, false, false);
 
 // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
@@ -105,8 +105,8 @@ for ($i = 0; $i < 3; ++$i) {
 	$x = 15;
 	for ($j = 0; $j < 3; ++$j) {
 		$fitbox[1] = $vertical_alignments[$j];
-		$pdf->Rect($x, $y, $w, $h, 'F', array(), array(128,255,128));
-		$pdf->Image('images/image_demo.jpg', $x, $y, $w, $h, 'JPG', '', '', false, 300, '', false, false, 0, $fitbox, false, false);
+		$pdf->rect($x, $y, $w, $h, 'F', array(), array(128,255,128));
+		$pdf->image('images/image_demo.jpg', $x, $y, $w, $h, 'JPG', '', '', false, 300, '', false, false, 0, $fitbox, false, false);
 		$x += 32; // new column
 	}
 	$y += 32; // new row
@@ -121,8 +121,8 @@ for ($i = 0; $i < 3; ++$i) {
 	$x = 115;
 	for ($j = 0; $j < 3; ++$j) {
 		$fitbox[1] = $vertical_alignments[$j];
-		$pdf->Rect($x, $y, $w, $h, 'F', array(), array(128,255,255));
-		$pdf->Image('images/image_demo.jpg', $x, $y, $w, $h, 'JPG', '', '', false, 300, '', false, false, 0, $fitbox, false, false);
+		$pdf->rect($x, $y, $w, $h, 'F', array(), array(128,255,255));
+		$pdf->image('images/image_demo.jpg', $x, $y, $w, $h, 'JPG', '', '', false, 300, '', false, false, 0, $fitbox, false, false);
 		$x += 27; // new column
 	}
 	$y += 52; // new row
@@ -133,13 +133,13 @@ for ($i = 0; $i < 3; ++$i) {
 // Stretching, position and alignment example
 
 $pdf->setXY(110, 200);
-$pdf->Image('images/image_demo.jpg', '', '', 40, 40, '', '', 'T', false, 300, '', false, false, 1, false, false, false);
-$pdf->Image('images/image_demo.jpg', '', '', 40, 40, '', '', '', false, 300, '', false, false, 1, false, false, false);
+$pdf->image('images/image_demo.jpg', '', '', 40, 40, '', '', 'T', false, 300, '', false, false, 1, false, false, false);
+$pdf->image('images/image_demo.jpg', '', '', 40, 40, '', '', '', false, 300, '', false, false, 1, false, false, false);
 
 // -------------------------------------------------------------------
 
 //Close and output PDF document
-$pdf->Output('example_009.pdf', 'I');
+$pdf->output('example_009.pdf', 'I');
 
 //============================================================+
 // END OF FILE

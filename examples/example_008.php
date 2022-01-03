@@ -73,7 +73,7 @@ $pdf->setFontSubsetting(true);
 $pdf->setFont('freeserif', '', 12);
 
 // add a page
-$pdf->AddPage();
+$pdf->addPage();
 
 // get esternal file content
 $utf8text = file_get_contents('data/utf8test.txt', false);
@@ -84,13 +84,13 @@ $pdf->setTextColor(0, 63, 127);
 //Write($h, $txt, $link='', $fill=0, $align='', $ln=false, $stretch=0, $firstline=false, $firstblock=false, $maxh=0)
 
 // write the text
-$pdf->Write(5, $utf8text, '', 0, '', false, 0, false, false, 0);
+$pdf->write(5, $utf8text, '', 0, '', false, 0, false, false, 0);
 
 
 // ---------------------------------------------------------
 
 //Close and output PDF document
-$pdf->Output('example_008.pdf', 'I');
+$pdf->output('example_008.pdf', 'I');
 
 //============================================================+
 // END OF FILE

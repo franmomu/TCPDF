@@ -167,12 +167,12 @@ class TCPDF_FILTERS {
 				// EOD shall behave as if a 0 (zero) followed the last digit
 				$data = substr($data, 0, -1).'0'.substr($data, -1);
 			} else {
-				self::Error('decodeFilterASCIIHexDecode: invalid code');
+				self::error('decodeFilterASCIIHexDecode: invalid code');
 			}
 		}
 		// check for invalid characters
 		if (preg_match('/[^a-fA-F\d]/', $data) > 0) {
-			self::Error('decodeFilterASCIIHexDecode: invalid code');
+			self::error('decodeFilterASCIIHexDecode: invalid code');
 		}
 		// get one byte of binary data for each pair of ASCII hexadecimal digits
 		$decoded = pack('H*', $data);
@@ -207,7 +207,7 @@ class TCPDF_FILTERS {
 		$data_length = strlen($data);
 		// check for invalid characters
 		if (preg_match('/[^\x21-\x75,\x74]/', $data) > 0) {
-			self::Error('decodeFilterASCII85Decode: invalid code');
+			self::error('decodeFilterASCII85Decode: invalid code');
 		}
 		// z sequence
 		$zseq = chr(0).chr(0).chr(0).chr(0);
@@ -224,7 +224,7 @@ class TCPDF_FILTERS {
 				if ($group_pos == 0) {
 					$decoded .= $zseq;
 				} else {
-					self::Error('decodeFilterASCII85Decode: invalid code');
+					self::error('decodeFilterASCII85Decode: invalid code');
 				}
 			} else {
 				// the value represented by a group of 5 characters should never be greater than 2^32 - 1
@@ -256,7 +256,7 @@ class TCPDF_FILTERS {
 				break;
 			}
 			case 1: {
-				self::Error('decodeFilterASCII85Decode: invalid code');
+				self::error('decodeFilterASCII85Decode: invalid code');
 				break;
 			}
 		}
@@ -356,7 +356,7 @@ class TCPDF_FILTERS {
 		// initialize string to return
 		$decoded = @gzuncompress($data);
 		if ($decoded === false) {
-			self::Error('decodeFilterFlateDecode: invalid code');
+			self::error('decodeFilterFlateDecode: invalid code');
 		}
 		return $decoded;
 	}
@@ -406,7 +406,7 @@ class TCPDF_FILTERS {
 	 * @public static
 	 */
 	public static function decodeFilterCCITTFaxDecode($data) {
-		self::Error('~decodeFilterCCITTFaxDecode: this method has not been yet implemented');
+		self::error('~decodeFilterCCITTFaxDecode: this method has not been yet implemented');
 		//return $data;
 	}
 
@@ -419,7 +419,7 @@ class TCPDF_FILTERS {
 	 * @public static
 	 */
 	public static function decodeFilterJBIG2Decode($data) {
-		self::Error('~decodeFilterJBIG2Decode: this method has not been yet implemented');
+		self::error('~decodeFilterJBIG2Decode: this method has not been yet implemented');
 		//return $data;
 	}
 
@@ -432,7 +432,7 @@ class TCPDF_FILTERS {
 	 * @public static
 	 */
 	public static function decodeFilterDCTDecode($data) {
-		self::Error('~decodeFilterDCTDecode: this method has not been yet implemented');
+		self::error('~decodeFilterDCTDecode: this method has not been yet implemented');
 		//return $data;
 	}
 
@@ -445,7 +445,7 @@ class TCPDF_FILTERS {
 	 * @public static
 	 */
 	public static function decodeFilterJPXDecode($data) {
-		self::Error('~decodeFilterJPXDecode: this method has not been yet implemented');
+		self::error('~decodeFilterJPXDecode: this method has not been yet implemented');
 		//return $data;
 	}
 
@@ -458,7 +458,7 @@ class TCPDF_FILTERS {
 	 * @public static
 	 */
 	public static function decodeFilterCrypt($data) {
-		self::Error('~decodeFilterCrypt: this method has not been yet implemented');
+		self::error('~decodeFilterCrypt: this method has not been yet implemented');
 		//return $data;
 	}
 
@@ -470,7 +470,7 @@ class TCPDF_FILTERS {
 	 * @since 1.0.000 (2011-05-23)
 	 * @public static
 	 */
-	public static function Error($msg) {
+	public static function error($msg) {
 		throw new Exception('TCPDF_PARSER ERROR: '.$msg);
 	}
 

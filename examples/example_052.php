@@ -91,7 +91,7 @@ $pdf->setSignature($certificate, $certificate, 'tcpdfdemo', '', 2, $info);
 $pdf->setFont('helvetica', '', 12);
 
 // add a page
-$pdf->AddPage();
+$pdf->addPage();
 
 // print a line of text
 $text = 'This is a <b color="#FF0000">digitally signed document</b> using the default (example) <b>tcpdf.crt</b> certificate.<br />To validate this signature you have to load the <b color="#006600">tcpdf.fdf</b> on the Arobat Reader to add the certificate to <i>List of Trusted Identities</i>.<br /><br />For more information check the source code of this example and the source code documentation for the <i>setSignature()</i> method.<br /><br /><a href="http://www.tcpdf.org">www.tcpdf.org</a>';
@@ -101,7 +101,7 @@ $pdf->writeHTML($text, true, 0, true, 0);
 // *** set signature appearance ***
 
 // create content for signature (image and/or text)
-$pdf->Image('images/tcpdf_signature.png', 180, 60, 15, 15, 'PNG');
+$pdf->image('images/tcpdf_signature.png', 180, 60, 15, 15, 'PNG');
 
 // define active area for signature appearance
 $pdf->setSignatureAppearance(180, 60, 15, 15);
@@ -114,7 +114,7 @@ $pdf->addEmptySignatureAppearance(180, 80, 15, 15);
 // ---------------------------------------------------------
 
 //Close and output PDF document
-$pdf->Output('example_052.pdf', 'D');
+$pdf->output('example_052.pdf', 'D');
 
 //============================================================+
 // END OF FILE

@@ -70,33 +70,33 @@ if (@file_exists(dirname(__FILE__).'/lang/eng.php')) {
 $pdf->setFont('helvetica', 'B', 20);
 
 // add a page
-$pdf->AddPage();
+$pdf->addPage();
 
-$pdf->Write(0, 'Example of PieSector() method.');
+$pdf->write(0, 'Example of PieSector() method.');
 
 $xc = 105;
 $yc = 100;
 $r = 50;
 
 $pdf->setFillColor(0, 0, 255);
-$pdf->PieSector($xc, $yc, $r, 20, 120, 'FD', false, 0, 2);
+$pdf->pieSector($xc, $yc, $r, 20, 120, 'FD', false, 0, 2);
 
 $pdf->setFillColor(0, 255, 0);
-$pdf->PieSector($xc, $yc, $r, 120, 250, 'FD', false, 0, 2);
+$pdf->pieSector($xc, $yc, $r, 120, 250, 'FD', false, 0, 2);
 
 $pdf->setFillColor(255, 0, 0);
-$pdf->PieSector($xc, $yc, $r, 250, 20, 'FD', false, 0, 2);
+$pdf->pieSector($xc, $yc, $r, 250, 20, 'FD', false, 0, 2);
 
 // write labels
 $pdf->setTextColor(255,255,255);
-$pdf->Text(105, 65, 'BLUE');
-$pdf->Text(60, 95, 'GREEN');
-$pdf->Text(120, 115, 'RED');
+$pdf->text(105, 65, 'BLUE');
+$pdf->text(60, 95, 'GREEN');
+$pdf->text(120, 115, 'RED');
 
 // ---------------------------------------------------------
 
 //Close and output PDF document
-$pdf->Output('example_031.pdf', 'I');
+$pdf->output('example_031.pdf', 'I');
 
 //============================================================+
 // END OF FILE

@@ -70,7 +70,7 @@ if (@file_exists(dirname(__FILE__).'/lang/eng.php')) {
 $pdf->setFont('helvetica', '', 10);
 
 // add a page
-$pdf->AddPage();
+$pdf->addPage();
 
 /* NOTE:
  * *********************************************************
@@ -220,7 +220,7 @@ $pdf->writeHTML($html, true, false, true, false, '');
 // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 // add a page
-$pdf->AddPage();
+$pdf->addPage();
 
 $html = '
 <h1>HTML TIPS & TRICKS</h1>
@@ -257,7 +257,7 @@ $pdf->lastPage();
 // ---------------------------------------------------------
 
 //Close and output PDF document
-$pdf->Output('example_061.pdf', 'I');
+$pdf->output('example_061.pdf', 'I');
 
 //============================================================+
 // END OF FILE

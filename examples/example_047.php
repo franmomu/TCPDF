@@ -70,39 +70,39 @@ if (@file_exists(dirname(__FILE__).'/lang/eng.php')) {
 $pdf->setFont('helvetica', '', 16);
 
 // add a page
-$pdf->AddPage();
+$pdf->addPage();
 
 $txt = 'Example of Transactions.
 TCPDF allows you to undo some operations using the Transactions.
 Check the source code for further information.';
-$pdf->Write(0, $txt, '', 0, 'L', true, 0, false, false, 0);
+$pdf->write(0, $txt, '', 0, 'L', true, 0, false, false, 0);
 
-$pdf->Ln(5);
+$pdf->ln(5);
 
 $pdf->setFont('times', '', 12);
 
 // start transaction
 $pdf->startTransaction();
 
-$pdf->Write(0, "LINE 1\n");
-$pdf->Write(0, "LINE 2\n");
+$pdf->write(0, "LINE 1\n");
+$pdf->write(0, "LINE 2\n");
 
 // restarts transaction
 $pdf->startTransaction();
 
-$pdf->Write(0, "LINE 3\n");
-$pdf->Write(0, "LINE 4\n");
+$pdf->write(0, "LINE 3\n");
+$pdf->write(0, "LINE 4\n");
 
 // rolls back to the last (re)start
 $pdf = $pdf->rollbackTransaction();
 
-$pdf->Write(0, "LINE 5\n");
-$pdf->Write(0, "LINE 6\n");
+$pdf->write(0, "LINE 5\n");
+$pdf->write(0, "LINE 6\n");
 
 // start transaction
 $pdf->startTransaction();
 
-$pdf->Write(0, "LINE 7\n");
+$pdf->write(0, "LINE 7\n");
 
 // commit transaction (actually just frees memory)
 $pdf->commitTransaction();
@@ -110,7 +110,7 @@ $pdf->commitTransaction();
 // ---------------------------------------------------------
 
 //Close and output PDF document
-$pdf->Output('example_047.pdf', 'I');
+$pdf->output('example_047.pdf', 'I');
 
 //============================================================+
 // END OF FILE

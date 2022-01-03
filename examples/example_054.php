@@ -73,7 +73,7 @@ $pdf->setFontSubsetting(false);
 $pdf->setFont('helvetica', '', 10, '', false);
 
 // add a page
-$pdf->AddPage();
+$pdf->addPage();
 
 // create some HTML content
 $html = <<<EOD
@@ -121,7 +121,7 @@ $pdf->lastPage();
 // ---------------------------------------------------------
 
 //Close and output PDF document
-$pdf->Output('example_054.pdf', 'D');
+$pdf->output('example_054.pdf', 'D');
 
 //============================================================+
 // END OF FILE

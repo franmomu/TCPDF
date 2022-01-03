@@ -31,7 +31,7 @@ require_once('tcpdf_include.php');
 // Extend the TCPDF class to create custom Header and Footer
 class MYPDF extends TCPDF {
 	//Page header
-	public function Header() {
+	public function header() {
 		// get the current page break margin
 		$bMargin = $this->getBreakMargin();
 		// get current auto-page-break mode
@@ -40,7 +40,7 @@ class MYPDF extends TCPDF {
 		$this->setAutoPageBreak(false, 0);
 		// set bacground image
 		$img_file = K_PATH_IMAGES.'image_demo.jpg';
-		$this->Image($img_file, 0, 0, 210, 297, '', '', '', false, 300, '', false, false, 0);
+		$this->image($img_file, 0, 0, 210, 297, '', '', '', false, 300, '', false, false, 0);
 		// restore auto-page-break status
 		$this->setAutoPageBreak($auto_page_break, $bMargin);
 		// set the starting point for the page content
@@ -90,7 +90,7 @@ if (@file_exists(dirname(__FILE__).'/lang/eng.php')) {
 $pdf->setFont('times', '', 48);
 
 // add a page
-$pdf->AddPage();
+$pdf->addPage();
 
 // Print a text
 $html = '<span style="background-color:yellow;color:blue;">&nbsp;PAGE 1&nbsp;</span>
@@ -99,7 +99,7 @@ $pdf->writeHTML($html, true, false, true, false, '');
 
 
 // add a page
-$pdf->AddPage();
+$pdf->addPage();
 
 // Print a text
 $html = '<span style="background-color:yellow;color:blue;">&nbsp;PAGE 2&nbsp;</span>';
@@ -111,7 +111,7 @@ $pdf->writeHTML($html, true, false, true, false, '');
 $pdf->setPrintHeader(false);
 
 // add a page
-$pdf->AddPage();
+$pdf->addPage();
 
 
 // -- set new background ---
@@ -124,7 +124,7 @@ $auto_page_break = $pdf->getAutoPageBreak();
 $pdf->setAutoPageBreak(false, 0);
 // set bacground image
 $img_file = K_PATH_IMAGES.'image_demo.jpg';
-$pdf->Image($img_file, 0, 0, 210, 297, '', '', '', false, 300, '', false, false, 0);
+$pdf->image($img_file, 0, 0, 210, 297, '', '', '', false, 300, '', false, false, 0);
 // restore auto-page-break status
 $pdf->setAutoPageBreak($auto_page_break, $bMargin);
 // set the starting point for the page content
@@ -138,7 +138,7 @@ $pdf->writeHTML($html, true, false, true, false, '');
 // ---------------------------------------------------------
 
 //Close and output PDF document
-$pdf->Output('example_051.pdf', 'I');
+$pdf->output('example_051.pdf', 'I');
 
 //============================================================+
 // END OF FILE

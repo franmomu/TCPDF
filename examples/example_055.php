@@ -78,7 +78,7 @@ $pdf->setFillColor(221,238,255);
 // create one HTML table for each core font
 foreach($core_fonts as $font) {
 	// add a page
-	$pdf->AddPage();
+	$pdf->addPage();
 
 	// Cell($w, $h=0, $txt='', $border=0, $ln=0, $align='', $fill=false, $link='', $stretch=0, $ignore_min_height=false, $calign='T', $valign='M')
 
@@ -86,7 +86,7 @@ foreach($core_fonts as $font) {
 	$pdf->setFont('helvetica', 'B', 16);
 
 	// print font name
-	$pdf->Cell(0, 10, 'FONT: '.$font, 1, 1, 'C', true, '', 0, false, 'T', 'M');
+	$pdf->cell(0, 10, 'FONT: '.$font, 1, 1, 'C', true, '', 0, false, 'T', 'M');
 
 	// set font for chars
 	$pdf->setFont($font, '', 16);
@@ -94,21 +94,21 @@ foreach($core_fonts as $font) {
 	// print each character
 	for ($i = 0; $i < 256; ++$i) {
 		if (($i > 0) AND (($i % 16) == 0)) {
-			$pdf->Ln();
+			$pdf->ln();
 		}
-		$pdf->Cell(11.25, 11.25, TCPDF_FONTS::unichr($i), 1, 0, 'C', false, '', 0, false, 'T', 'M');
+		$pdf->cell(11.25, 11.25, TCPDF_FONTS::unichr($i), 1, 0, 'C', false, '', 0, false, 'T', 'M');
 	}
 
-	$pdf->Ln(20);
+	$pdf->ln(20);
 
 	// print a pangram
-	$pdf->Cell(0, 0, 'The quick brown fox jumps over the lazy dog', 0, 1, 'C', false, '', 0, false, 'T', 'M');
+	$pdf->cell(0, 0, 'The quick brown fox jumps over the lazy dog', 0, 1, 'C', false, '', 0, false, 'T', 'M');
 }
 
 // ---------------------------------------------------------
 
 //Close and output PDF document
-$pdf->Output('example_055.pdf', 'D');
+$pdf->output('example_055.pdf', 'D');
 
 //============================================================+
 // END OF FILE

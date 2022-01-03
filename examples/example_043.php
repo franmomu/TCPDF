@@ -70,15 +70,15 @@ if (@file_exists(dirname(__FILE__).'/lang/eng.php')) {
 $pdf->setFont('helvetica', '', 16);
 
 // add a page
-$pdf->AddPage();
+$pdf->addPage();
 
 // Multicell test
-$pdf->MultiCell(0, 0, 'DISK CACHING TEST: check the parameters of the class constructor.', 1, 'L', 0, 0, '', '', true);
+$pdf->multiCell(0, 0, 'DISK CACHING TEST: check the parameters of the class constructor.', 1, 'L', 0, 0, '', '', true);
 
 // ---------------------------------------------------------
 
 //Close and output PDF document
-$pdf->Output('example_043.pdf', 'I');
+$pdf->output('example_043.pdf', 'I');
 
 //============================================================+
 // END OF FILE

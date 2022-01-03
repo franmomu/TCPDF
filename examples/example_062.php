@@ -70,9 +70,9 @@ if (@file_exists(dirname(__FILE__).'/lang/eng.php')) {
 $pdf->setFont('helvetica', 'B', 20);
 
 // add a page
-$pdf->AddPage();
+$pdf->addPage();
 
-$pdf->Write(0, 'XObject Templates', '', 0, 'C', 1, 0, false, false, 0);
+$pdf->write(0, 'XObject Templates', '', 0, 'C', 1, 0, false, false, 0);
 
 /*
  * An XObject Template is a PDF block that is a self-contained
@@ -91,16 +91,16 @@ $template_id = $pdf->startTemplate(60, 60, true);
 // create Template content
 // ...................................................................
 //Start Graphic Transformation
-$pdf->StartTransform();
+$pdf->startTransform();
 
 // set clipping mask
-$pdf->StarPolygon(30, 30, 29, 10, 3, 0, 1, 'CNZ');
+$pdf->starPolygon(30, 30, 29, 10, 3, 0, 1, 'CNZ');
 
 // draw jpeg image to be clipped
-$pdf->Image('images/image_demo.jpg', 0, 0, 60, 60, '', '', '', true, 72, '', false, false, 0, false, false, false);
+$pdf->image('images/image_demo.jpg', 0, 0, 60, 60, '', '', '', true, 72, '', false, false, 0, false, false, false);
 
 //Stop Graphic Transformation
-$pdf->StopTransform();
+$pdf->stopTransform();
 
 $pdf->setXY(0, 0);
 
@@ -109,7 +109,7 @@ $pdf->setFont('times', '', 40);
 $pdf->setTextColor(255, 0, 0);
 
 // print a text
-$pdf->Cell(60, 60, 'Template', 0, 0, 'C', false, '', 0, false, 'T', 'M');
+$pdf->cell(60, 60, 'Template', 0, 0, 'C', false, '', 0, false, 'T', 'M');
 // ...................................................................
 
 // end the current Template
@@ -133,7 +133,7 @@ $pdf->printTemplate($template_id, 95, 125, 80, 80, '', '', false);
 // ---------------------------------------------------------
 
 //Close and output PDF document
-$pdf->Output('example_062.pdf', 'I');
+$pdf->output('example_062.pdf', 'I');
 
 //============================================================+
 // END OF FILE

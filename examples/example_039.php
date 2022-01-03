@@ -67,12 +67,12 @@ if (@file_exists(dirname(__FILE__).'/lang/eng.php')) {
 // ---------------------------------------------------------
 
 // add a page
-$pdf->AddPage();
+$pdf->addPage();
 
 // set font
 $pdf->setFont('helvetica', 'B', 20);
 
-$pdf->Write(0, 'Example of HTML Justification', '', 0, 'L', true, 0, false, false, 0);
+$pdf->write(0, 'Example of HTML Justification', '', 0, 'L', true, 0, false, false, 0);
 
 // create some HTML content
 $html = '<span style="text-align:justify;">a <u>abc</u> abcdefghijkl (abcdef) abcdefg <b>abcdefghi</b> a ((abc)) abcd <img src="images/logo_example.png" border="0" height="41" width="41" /> <img src="images/tcpdf_box.svg" alt="test alt attribute" width="80" height="60" border="0" /> abcdef abcdefg <b>abcdefghi</b> a abc abcd abcdef abcdefg <b>abcdefghi</b> a abc abcd abcdef abcdefg <b>abcdefghi</b> a <u>abc</u> abcd abcdef abcdefg <b>abcdefghi</b> a abc \(abcd\) abcdef abcdefg <b>abcdefghi</b> a abc \\\(abcd\\\) abcdef abcdefg <b>abcdefghi</b> a abc abcd abcdef abcdefg <b>abcdefghi</b> a abc abcd abcdef abcdefg <b>abcdefghi</b> a abc abcd abcdef abcdefg abcdefghi a abc abcd <a href="http://tcpdf.org">abcdef abcdefg</a> start a abc before <span style="background-color:yellow">yellow color</span> after a abc abcd abcdef abcdefg abcdefghi a abc abcd end abcdefg abcdefghi a abc abcd abcdef abcdefg abcdefghi a abc abcd abcdef abcdefg abcdefghi a abc abcd abcdef abcdefg abcdefghi a abc abcd abcdef abcdefg abcdefghi a abc abcd abcdef abcdefg abcdefghi a abc abcd abcdef abcdefg abcdefghi a abc abcd abcdef abcdefg abcdefghi<br />abcd abcdef abcdefg abcdefghi<br />abcd abcde abcdef</span>';
@@ -83,7 +83,7 @@ $pdf->setFont('helvetica', '', 10);
 // output the HTML content
 $pdf->writeHTML($html, true, 0, true, true);
 
-$pdf->Ln();
+$pdf->ln();
 
 // set UTF-8 Unicode font
 $pdf->setFont('dejavusans', '', 10);
@@ -97,7 +97,7 @@ $pdf->lastPage();
 // ---------------------------------------------------------
 
 //Close and output PDF document
-$pdf->Output('example_039.pdf', 'I');
+$pdf->output('example_039.pdf', 'I');
 
 //============================================================+
 // END OF FILE

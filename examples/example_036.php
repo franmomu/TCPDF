@@ -70,19 +70,19 @@ if (@file_exists(dirname(__FILE__).'/lang/eng.php')) {
 $pdf->setFont('times', '', 16);
 
 // add a page
-$pdf->AddPage();
+$pdf->addPage();
 
 $txt = 'Example of Text Annotation.
 Move your mouse over the yellow box or double click on it to display the annotation text.';
-$pdf->Write(0, $txt, '', 0, 'L', true, 0, false, false, 0);
+$pdf->write(0, $txt, '', 0, 'L', true, 0, false, false, 0);
 
 // text annotation
-$pdf->Annotation(83, 27, 10, 10, "Text annotation example\naccented letters test: àèéìòù", array('Subtype'=>'Text', 'Name' => 'Comment', 'T' => 'title example', 'Subj' => 'example', 'C' => array(255, 255, 0)));
+$pdf->annotation(83, 27, 10, 10, "Text annotation example\naccented letters test: àèéìòù", array('Subtype'=>'Text', 'Name' => 'Comment', 'T' => 'title example', 'Subj' => 'example', 'C' => array(255, 255, 0)));
 
 // ---------------------------------------------------------
 
 //Close and output PDF document
-$pdf->Output('example_036.pdf', 'I');
+$pdf->output('example_036.pdf', 'I');
 
 //============================================================+
 // END OF FILE

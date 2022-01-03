@@ -70,11 +70,11 @@ if (@file_exists(dirname(__FILE__).'/lang/eng.php')) {
 $pdf->setFont('helvetica', 'B', 20);
 
 // add a page
-$pdf->AddPage();
+$pdf->addPage();
 
-$pdf->Write(0, 'Example of Text Hyphenation', '', 0, 'L', true, 0, false, false, 0);
+$pdf->write(0, 'Example of Text Hyphenation', '', 0, 'L', true, 0, false, false, 0);
 
-$pdf->Ln(10);
+$pdf->ln(10);
 
 /*
 Unicode Data for SHY:
@@ -116,7 +116,7 @@ $pdf->writeHTMLCell(50, 0, '', '', $html, 1, 1, 0, true, 'J');
 // ---------------------------------------------------------
 
 //Close and output PDF document
-$pdf->Output('example_046.pdf', 'I');
+$pdf->output('example_046.pdf', 'I');
 
 //============================================================+
 // END OF FILE

@@ -75,9 +75,9 @@ if (@file_exists(dirname(__FILE__).'/lang/eng.php')) {
 $pdf->setFont('helvetica', 'B', 18);
 
 // add a page
-$pdf->AddPage();
+$pdf->addPage();
 
-$pdf->Write(0, 'Example of CMYK, RGB and Grayscale colours', '', 0, 'L', true, 0, false, false, 0);
+$pdf->write(0, 'Example of CMYK, RGB and Grayscale colours', '', 0, 'L', true, 0, false, false, 0);
 
 // define style for border
 $border_style = array('all' => array('width' => 2, 'cap' => 'square', 'join' => 'miter', 'dash' => 0, 'phase' => 0));
@@ -87,59 +87,59 @@ $border_style = array('all' => array('width' => 2, 'cap' => 'square', 'join' => 
 $pdf->setDrawColor(50, 0, 0, 0);
 $pdf->setFillColor(100, 0, 0, 0);
 $pdf->setTextColor(100, 0, 0, 0);
-$pdf->Rect(30, 60, 30, 30, 'DF', $border_style);
-$pdf->Text(30, 92, 'Cyan');
+$pdf->rect(30, 60, 30, 30, 'DF', $border_style);
+$pdf->text(30, 92, 'Cyan');
 
 $pdf->setDrawColor(0, 50, 0, 0);
 $pdf->setFillColor(0, 100, 0, 0);
 $pdf->setTextColor(0, 100, 0, 0);
-$pdf->Rect(70, 60, 30, 30, 'DF', $border_style);
-$pdf->Text(70, 92, 'Magenta');
+$pdf->rect(70, 60, 30, 30, 'DF', $border_style);
+$pdf->text(70, 92, 'Magenta');
 
 $pdf->setDrawColor(0, 0, 50, 0);
 $pdf->setFillColor(0, 0, 100, 0);
 $pdf->setTextColor(0, 0, 100, 0);
-$pdf->Rect(110, 60, 30, 30, 'DF', $border_style);
-$pdf->Text(110, 92, 'Yellow');
+$pdf->rect(110, 60, 30, 30, 'DF', $border_style);
+$pdf->text(110, 92, 'Yellow');
 
 $pdf->setDrawColor(0, 0, 0, 50);
 $pdf->setFillColor(0, 0, 0, 100);
 $pdf->setTextColor(0, 0, 0, 100);
-$pdf->Rect(150, 60, 30, 30, 'DF', $border_style);
-$pdf->Text(150, 92, 'Black');
+$pdf->rect(150, 60, 30, 30, 'DF', $border_style);
+$pdf->text(150, 92, 'Black');
 
 // --- RGB -------------------------------------------------
 
 $pdf->setDrawColor(255, 127, 127);
 $pdf->setFillColor(255, 0, 0);
 $pdf->setTextColor(255, 0, 0);
-$pdf->Rect(30, 110, 30, 30, 'DF', $border_style);
-$pdf->Text(30, 142, 'Red');
+$pdf->rect(30, 110, 30, 30, 'DF', $border_style);
+$pdf->text(30, 142, 'Red');
 
 $pdf->setDrawColor(127, 255, 127);
 $pdf->setFillColor(0, 255, 0);
 $pdf->setTextColor(0, 255, 0);
-$pdf->Rect(70, 110, 30, 30, 'DF', $border_style);
-$pdf->Text(70, 142, 'Green');
+$pdf->rect(70, 110, 30, 30, 'DF', $border_style);
+$pdf->text(70, 142, 'Green');
 
 $pdf->setDrawColor(127, 127, 255);
 $pdf->setFillColor(0, 0, 255);
 $pdf->setTextColor(0, 0, 255);
-$pdf->Rect(110, 110, 30, 30, 'DF', $border_style);
-$pdf->Text(110, 142, 'Blue');
+$pdf->rect(110, 110, 30, 30, 'DF', $border_style);
+$pdf->text(110, 142, 'Blue');
 
 // --- GRAY ------------------------------------------------
 
 $pdf->setDrawColor(191);
 $pdf->setFillColor(127);
 $pdf->setTextColor(127);
-$pdf->Rect(30, 160, 30, 30, 'DF', $border_style);
-$pdf->Text(30, 192, 'Gray');
+$pdf->rect(30, 160, 30, 30, 'DF', $border_style);
+$pdf->text(30, 192, 'Gray');
 
 // ---------------------------------------------------------
 
 //Close and output PDF document
-$pdf->Output('example_022.pdf', 'I');
+$pdf->output('example_022.pdf', 'I');
 
 //============================================================+
 // END OF FILE
