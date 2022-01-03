@@ -70,11 +70,11 @@ if (@file_exists(dirname(__FILE__).'/lang/eng.php')) {
 $pdf->setFont('times', 'BI', 16);
 
 // add a page
-$pdf->AddPage();
+$pdf->addPage();
 
-$pdf->Write(0, 'Example of SetLineStyle() method', '', 0, 'L', true, 0, false, false, 0);
+$pdf->write(0, 'Example of SetLineStyle() method', '', 0, 'L', true, 0, false, false, 0);
 
-$pdf->Ln();
+$pdf->ln();
 
 $pdf->setLineStyle(array('width' => 0.5, 'cap' => 'butt', 'join' => 'miter', 'dash' => 4, 'color' => array(255, 0, 0)));
 $pdf->setFillColor(255,255,128);
@@ -82,29 +82,29 @@ $pdf->setTextColor(0,0,128);
 
 $text="DUMMY";
 
-$pdf->Cell(0, 0, $text, 1, 1, 'L', 1, 0);
+$pdf->cell(0, 0, $text, 1, 1, 'L', 1, 0);
 
-$pdf->Ln();
+$pdf->ln();
 
 $pdf->setLineStyle(array('width' => 0.5, 'cap' => 'butt', 'join' => 'miter', 'dash' => 0, 'color' => array(0, 0, 255)));
 $pdf->setFillColor(255,255,0);
 $pdf->setTextColor(0,0,255);
-$pdf->MultiCell(60, 4, $text, 1, 'C', 1, 0);
+$pdf->multiCell(60, 4, $text, 1, 'C', 1, 0);
 
 $pdf->setLineStyle(array('width' => 0.5, 'cap' => 'butt', 'join' => 'miter', 'dash' => 0, 'color' => array(255, 255, 0)));
 $pdf->setFillColor(0,0,255);
 $pdf->setTextColor(255,255,0);
-$pdf->MultiCell(60, 4, $text, 'TB', 'C', 1, 0);
+$pdf->multiCell(60, 4, $text, 'TB', 'C', 1, 0);
 
 $pdf->setLineStyle(array('width' => 0.5, 'cap' => 'butt', 'join' => 'miter', 'dash' => 0, 'color' => array(255, 0, 255)));
 $pdf->setFillColor(0,255,0);
 $pdf->setTextColor(255,0,255);
-$pdf->MultiCell(60, 4, $text, 1, 'C', 1, 1);
+$pdf->multiCell(60, 4, $text, 1, 'C', 1, 1);
 
 // ---------------------------------------------------------
 
 //Close and output PDF document
-$pdf->Output('example_035.pdf', 'I');
+$pdf->output('example_035.pdf', 'I');
 
 //============================================================+
 // END OF FILE

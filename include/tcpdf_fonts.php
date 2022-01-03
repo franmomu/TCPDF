@@ -1151,7 +1151,7 @@ class TCPDF_FONTS {
 								$subsetglyphs[$g] = true;
 							}
 						}
-					}	
+					}
 					break;
 				}
 				case 6: { // Format 6: Trimmed table mapping
@@ -1817,7 +1817,7 @@ class TCPDF_FONTS {
 	 * @since 4.5.037 (2009-04-07)
 	 * @public static
 	 */
-	public static function UniArrSubString($uniarr, $start='', $end='') {
+	public static function uniArrSubString($uniarr, $start='', $end='') {
 		if (strlen($start) == 0) {
 			$start = 0;
 		}

@@ -36,13 +36,13 @@ class TOC_TCPDF extends TCPDF {
  	 * Overwrite Header() method.
 	 * @public
 	 */
-	public function Header() {
+	public function header() {
 		if ($this->tocpage) {
-			// *** replace the following parent::Header() with your code for TOC page
-			parent::Header();
+			// *** replace the following parent::header() with your code for TOC page
+			parent::header();
 		} else {
-			// *** replace the following parent::Header() with your code for normal pages
-			parent::Header();
+			// *** replace the following parent::header() with your code for normal pages
+			parent::header();
 		}
 	}
 
@@ -50,13 +50,13 @@ class TOC_TCPDF extends TCPDF {
  	 * Overwrite Footer() method.
 	 * @public
 	 */
-	public function Footer() {
+	public function footer() {
 		if ($this->tocpage) {
-			// *** replace the following parent::Footer() with your code for TOC page
-			parent::Footer();
+			// *** replace the following parent::footer() with your code for TOC page
+			parent::footer();
 		} else {
-			// *** replace the following parent::Footer() with your code for normal pages
-			parent::Footer();
+			// *** replace the following parent::footer() with your code for normal pages
+			parent::footer();
 		}
 	}
 
@@ -107,35 +107,35 @@ $pdf->setFont('helvetica', '', 10);
 // create some content ...
 
 // add a page
-$pdf->AddPage();
+$pdf->addPage();
 
 // set a bookmark for the current position
-$pdf->Bookmark('Chapter 1', 0, 0, '', 'B', array(0,64,128));
+$pdf->bookmark('Chapter 1', 0, 0, '', 'B', array(0,64,128));
 
 // print a line using Cell()
-$pdf->Cell(0, 10, 'Chapter 1', 0, 1, 'L');
+$pdf->cell(0, 10, 'Chapter 1', 0, 1, 'L');
 
-$pdf->AddPage();
-$pdf->Bookmark('Paragraph 1.1', 1, 0, '', '', array(128,0,0));
-$pdf->Cell(0, 10, 'Paragraph 1.1', 0, 1, 'L');
+$pdf->addPage();
+$pdf->bookmark('Paragraph 1.1', 1, 0, '', '', array(128,0,0));
+$pdf->cell(0, 10, 'Paragraph 1.1', 0, 1, 'L');
 
-$pdf->AddPage();
-$pdf->Bookmark('Paragraph 1.2', 1, 0, '', '', array(128,0,0));
-$pdf->Cell(0, 10, 'Paragraph 1.2', 0, 1, 'L');
+$pdf->addPage();
+$pdf->bookmark('Paragraph 1.2', 1, 0, '', '', array(128,0,0));
+$pdf->cell(0, 10, 'Paragraph 1.2', 0, 1, 'L');
 
-$pdf->AddPage();
-$pdf->Bookmark('Sub-Paragraph 1.2.1', 2, 0, '', 'I', array(0,128,0));
-$pdf->Cell(0, 10, 'Sub-Paragraph 1.2.1', 0, 1, 'L');
+$pdf->addPage();
+$pdf->bookmark('Sub-Paragraph 1.2.1', 2, 0, '', 'I', array(0,128,0));
+$pdf->cell(0, 10, 'Sub-Paragraph 1.2.1', 0, 1, 'L');
 
-$pdf->AddPage();
-$pdf->Bookmark('Paragraph 1.3', 1, 0, '', '', array(128,0,0));
-$pdf->Cell(0, 10, 'Paragraph 1.3', 0, 1, 'L');
+$pdf->addPage();
+$pdf->bookmark('Paragraph 1.3', 1, 0, '', '', array(128,0,0));
+$pdf->cell(0, 10, 'Paragraph 1.3', 0, 1, 'L');
 
 // add some pages and bookmarks
 for ($i = 2; $i < 12; $i++) {
-	$pdf->AddPage();
-	$pdf->Bookmark('Chapter '.$i, 0, 0, '', 'B', array(0,64,128));
-	$pdf->Cell(0, 10, 'Chapter '.$i, 0, 1, 'L');
+	$pdf->addPage();
+	$pdf->bookmark('Chapter '.$i, 0, 0, '', 'B', array(0,64,128));
+	$pdf->cell(0, 10, 'Chapter '.$i, 0, 1, 'L');
 }
 
 
@@ -147,8 +147,8 @@ $pdf->addTOCPage();
 
 // write the TOC title and/or other elements on the TOC page
 $pdf->setFont('times', 'B', 16);
-$pdf->MultiCell(0, 0, 'Table Of Content', 0, 'C', 0, 1, '', '', true, 0);
-$pdf->Ln();
+$pdf->multiCell(0, 0, 'Table Of Content', 0, 'C', 0, 1, '', '', true, 0);
+$pdf->ln();
 $pdf->setFont('helvetica', '', 10);
 
 // define styles for various bookmark levels
@@ -183,7 +183,7 @@ $pdf->endTOCPage();
 // ---------------------------------------------------------
 
 //Close and output PDF document
-$pdf->Output('example_059.pdf', 'D');
+$pdf->output('example_059.pdf', 'D');
 
 //============================================================+
 // END OF FILE

@@ -70,9 +70,9 @@ if (@file_exists(dirname(__FILE__).'/lang/eng.php')) {
 $pdf->setFont('helvetica', 'B', 20);
 
 // add a page
-$pdf->AddPage();
+$pdf->addPage();
 
-$pdf->Write(0, 'Example of HTML tables', '', 0, 'L', true, 0, false, false, 0);
+$pdf->write(0, 'Example of HTML tables', '', 0, 'L', true, 0, false, false, 0);
 
 $pdf->setFont('helvetica', '', 8);
 
@@ -306,7 +306,7 @@ $pdf->writeHTML($tbl, true, false, false, false, '');
 // -----------------------------------------------------------------------------
 
 //Close and output PDF document
-$pdf->Output('example_048.pdf', 'I');
+$pdf->output('example_048.pdf', 'I');
 
 //============================================================+
 // END OF FILE

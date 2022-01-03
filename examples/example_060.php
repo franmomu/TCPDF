@@ -90,18 +90,18 @@ $page_format = array(
 // Check the example n. 29 for viewer preferences
 
 // add first page ---
-$pdf->AddPage('P', $page_format, false, false);
-$pdf->Cell(0, 12, 'First Page', 1, 1, 'C');
+$pdf->addPage('P', $page_format, false, false);
+$pdf->cell(0, 12, 'First Page', 1, 1, 'C');
 
 // add second page ---
 $page_format['Rotate'] = 270;
-$pdf->AddPage('P', $page_format, false, false);
-$pdf->Cell(0, 12, 'Second Page', 1, 1, 'C');
+$pdf->addPage('P', $page_format, false, false);
+$pdf->cell(0, 12, 'Second Page', 1, 1, 'C');
 
 // ---------------------------------------------------------
 
 //Close and output PDF document
-$pdf->Output('example_060.pdf', 'I');
+$pdf->output('example_060.pdf', 'I');
 
 //============================================================+
 // END OF FILE

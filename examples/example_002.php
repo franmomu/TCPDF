@@ -65,7 +65,7 @@ if (@file_exists(dirname(__FILE__).'/lang/eng.php')) {
 $pdf->setFont('times', 'BI', 20);
 
 // add a page
-$pdf->AddPage();
+$pdf->addPage();
 
 // set some text to print
 $txt = <<<EOD
@@ -75,12 +75,12 @@ Default page header and footer are disabled using setPrintHeader() and setPrintF
 EOD;
 
 // print a block of text using Write()
-$pdf->Write(0, $txt, '', 0, 'C', true, 0, false, false, 0);
+$pdf->write(0, $txt, '', 0, 'C', true, 0, false, false, 0);
 
 // ---------------------------------------------------------
 
 //Close and output PDF document
-$pdf->Output('example_002.pdf', 'I');
+$pdf->output('example_002.pdf', 'I');
 
 //============================================================+
 // END OF FILE

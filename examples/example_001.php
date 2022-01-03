@@ -78,7 +78,7 @@ $pdf->setFont('dejavusans', '', 14, '', true);
 
 // Add a page
 // This method has several options, check the source code documentation for more information.
-$pdf->AddPage();
+$pdf->addPage();
 
 // set text shadow effect
 $pdf->setTextShadow(array('enabled'=>true, 'depth_w'=>0.2, 'depth_h'=>0.2, 'color'=>array(196,196,196), 'opacity'=>1, 'blend_mode'=>'Normal'));
@@ -99,7 +99,7 @@ $pdf->writeHTMLCell(0, 0, '', '', $html, 0, 1, 0, true, '', true);
 
 // Close and output PDF document
 // This method has several options, check the source code documentation for more information.
-$pdf->Output('example_001.pdf', 'I');
+$pdf->output('example_001.pdf', 'I');
 
 //============================================================+
 // END OF FILE

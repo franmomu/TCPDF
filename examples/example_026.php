@@ -70,50 +70,50 @@ if (@file_exists(dirname(__FILE__).'/lang/eng.php')) {
 $pdf->setFont('helvetica', '', 22);
 
 // add a page
-$pdf->AddPage();
+$pdf->addPage();
 
 // set color for text stroke
 $pdf->setDrawColor(255,0,0);
 
 
 $pdf->setTextRenderingMode($stroke=0, $fill=true, $clip=false);
-$pdf->Write(0, 'Fill text', '', 0, '', true, 0, false, false, 0);
+$pdf->write(0, 'Fill text', '', 0, '', true, 0, false, false, 0);
 
 $pdf->setTextRenderingMode($stroke=0.2, $fill=false, $clip=false);
-$pdf->Write(0, 'Stroke text', '', 0, '', true, 0, false, false, 0);
+$pdf->write(0, 'Stroke text', '', 0, '', true, 0, false, false, 0);
 
 $pdf->setTextRenderingMode($stroke=0.2, $fill=true, $clip=false);
-$pdf->Write(0, 'Fill, then stroke text', '', 0, '', true, 0, false, false, 0);
+$pdf->write(0, 'Fill, then stroke text', '', 0, '', true, 0, false, false, 0);
 
 $pdf->setTextRenderingMode($stroke=0, $fill=false, $clip=false);
-$pdf->Write(0, 'Neither fill nor stroke text (invisible)', '', 0, '', true, 0, false, false, 0);
+$pdf->write(0, 'Neither fill nor stroke text (invisible)', '', 0, '', true, 0, false, false, 0);
 
 
 // * * * CLIPPING MODES  * * * * * * * * * * * * * * * * * *
 
-$pdf->StartTransform();
+$pdf->startTransform();
 $pdf->setTextRenderingMode($stroke=0, $fill=true, $clip=true);
-$pdf->Write(0, 'Fill text and add to path for clipping', '', 0, '', true, 0, false, false, 0);
-$pdf->Image('images/image_demo.jpg', 15, 65, 170, 10, '', '', '', true, 72);
-$pdf->StopTransform();
+$pdf->write(0, 'Fill text and add to path for clipping', '', 0, '', true, 0, false, false, 0);
+$pdf->image('images/image_demo.jpg', 15, 65, 170, 10, '', '', '', true, 72);
+$pdf->stopTransform();
 
-$pdf->StartTransform();
+$pdf->startTransform();
 $pdf->setTextRenderingMode($stroke=0.3, $fill=false, $clip=true);
-$pdf->Write(0, 'Stroke text and add to path for clipping', '', 0, '', true, 0, false, false, 0);
-$pdf->Image('images/image_demo.jpg', 15, 75, 170, 10, '', '', '', true, 72);
-$pdf->StopTransform();
+$pdf->write(0, 'Stroke text and add to path for clipping', '', 0, '', true, 0, false, false, 0);
+$pdf->image('images/image_demo.jpg', 15, 75, 170, 10, '', '', '', true, 72);
+$pdf->stopTransform();
 
-$pdf->StartTransform();
+$pdf->startTransform();
 $pdf->setTextRenderingMode($stroke=0.3, $fill=true, $clip=true);
-$pdf->Write(0, 'Fill, then stroke text and add to path for clipping', '', 0, '', true, 0, false, false, 0);
-$pdf->Image('images/image_demo.jpg', 15, 85, 170, 10, '', '', '', true, 72);
-$pdf->StopTransform();
+$pdf->write(0, 'Fill, then stroke text and add to path for clipping', '', 0, '', true, 0, false, false, 0);
+$pdf->image('images/image_demo.jpg', 15, 85, 170, 10, '', '', '', true, 72);
+$pdf->stopTransform();
 
-$pdf->StartTransform();
+$pdf->startTransform();
 $pdf->setTextRenderingMode($stroke=0, $fill=false, $clip=true);
-$pdf->Write(0, 'Add text to path for clipping', '', 0, '', true, 0, false, false, 0);
-$pdf->Image('images/image_demo.jpg', 15, 95, 170, 10, '', '', '', true, 72);
-$pdf->StopTransform();
+$pdf->write(0, 'Add text to path for clipping', '', 0, '', true, 0, false, false, 0);
+$pdf->image('images/image_demo.jpg', 15, 95, 170, 10, '', '', '', true, 72);
+$pdf->stopTransform();
 
 // reset text rendering mode
 $pdf->setTextRenderingMode($stroke=0, $fill=true, $clip=false);
@@ -138,7 +138,7 @@ $pdf->writeHTML($html, true, 0, true, 0);
 // ---------------------------------------------------------
 
 //Close and output PDF document
-$pdf->Output('example_026.pdf', 'I');
+$pdf->output('example_026.pdf', 'I');
 
 //============================================================+
 // END OF FILE

@@ -70,34 +70,34 @@ if (@file_exists(dirname(__FILE__).'/lang/eng.php')) {
 $pdf->setFont('times', 'B', 20);
 
 // add a page
-$pdf->AddPage();
+$pdf->addPage();
 
 // set a bookmark for the current position
-$pdf->Bookmark('Chapter 1', 0, 0, '', 'B', array(0,64,128));
+$pdf->bookmark('Chapter 1', 0, 0, '', 'B', array(0,64,128));
 
 // print a line using Cell()
-$pdf->Cell(0, 10, 'Chapter 1', 0, 1, 'L');
+$pdf->cell(0, 10, 'Chapter 1', 0, 1, 'L');
 
 // Create a fixed link to the first page using the * character
-$index_link = $pdf->AddLink();
+$index_link = $pdf->addLink();
 $pdf->setLink($index_link, 0, '*1');
-$pdf->Cell(0, 10, 'Link to INDEX', 0, 1, 'R', false, $index_link);
+$pdf->cell(0, 10, 'Link to INDEX', 0, 1, 'R', false, $index_link);
 
-$pdf->AddPage();
-$pdf->Bookmark('Paragraph 1.1', 1, 0, '', '', array(128,0,0));
-$pdf->Cell(0, 10, 'Paragraph 1.1', 0, 1, 'L');
+$pdf->addPage();
+$pdf->bookmark('Paragraph 1.1', 1, 0, '', '', array(128,0,0));
+$pdf->cell(0, 10, 'Paragraph 1.1', 0, 1, 'L');
 
-$pdf->AddPage();
-$pdf->Bookmark('Paragraph 1.2', 1, 0, '', '', array(128,0,0));
-$pdf->Cell(0, 10, 'Paragraph 1.2', 0, 1, 'L');
+$pdf->addPage();
+$pdf->bookmark('Paragraph 1.2', 1, 0, '', '', array(128,0,0));
+$pdf->cell(0, 10, 'Paragraph 1.2', 0, 1, 'L');
 
-$pdf->AddPage();
-$pdf->Bookmark('Sub-Paragraph 1.2.1', 2, 0, '', 'I', array(0,128,0));
-$pdf->Cell(0, 10, 'Sub-Paragraph 1.2.1', 0, 1, 'L');
+$pdf->addPage();
+$pdf->bookmark('Sub-Paragraph 1.2.1', 2, 0, '', 'I', array(0,128,0));
+$pdf->cell(0, 10, 'Sub-Paragraph 1.2.1', 0, 1, 'L');
 
-$pdf->AddPage();
-$pdf->Bookmark('Paragraph 1.3', 1, 0, '', '', array(128,0,0));
-$pdf->Cell(0, 10, 'Paragraph 1.3', 0, 1, 'L');
+$pdf->addPage();
+$pdf->bookmark('Paragraph 1.3', 1, 0, '', '', array(128,0,0));
+$pdf->cell(0, 10, 'Paragraph 1.3', 0, 1, 'L');
 
 // fixed link to the first page using the * character
 $html = '<a href="#*1" style="color:blue;">link to INDEX (page 1)</a>';
@@ -106,9 +106,9 @@ $pdf->writeHTML($html, true, false, true, false, '');
 
 // add some pages and bookmarks
 for ($i = 2; $i < 12; $i++) {
-	$pdf->AddPage();
-	$pdf->Bookmark('Chapter '.$i, 0, 0, '', 'B', array(0,64,128));
-	$pdf->Cell(0, 10, 'Chapter '.$i, 0, 1, 'L');
+	$pdf->addPage();
+	$pdf->bookmark('Chapter '.$i, 0, 0, '', 'B', array(0,64,128));
+	$pdf->cell(0, 10, 'Chapter '.$i, 0, 1, 'L');
 }
 
 // . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
@@ -118,8 +118,8 @@ $pdf->addTOCPage();
 
 // write the TOC title
 $pdf->setFont('times', 'B', 16);
-$pdf->MultiCell(0, 0, 'Table Of Content', 0, 'C', 0, 1, '', '', true, 0);
-$pdf->Ln();
+$pdf->multiCell(0, 0, 'Table Of Content', 0, 'C', 0, 1, '', '', true, 0);
+$pdf->ln();
 
 $pdf->setFont('dejavusans', '', 12);
 
@@ -133,7 +133,7 @@ $pdf->endTOCPage();
 // ---------------------------------------------------------
 
 //Close and output PDF document
-$pdf->Output('example_045.pdf', 'I');
+$pdf->output('example_045.pdf', 'I');
 
 //============================================================+
 // END OF FILE

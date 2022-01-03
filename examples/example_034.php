@@ -70,26 +70,26 @@ if (@file_exists(dirname(__FILE__).'/lang/eng.php')) {
 $pdf->setFont('helvetica', 'B', 20);
 
 // add a page
-$pdf->AddPage();
+$pdf->addPage();
 
-$pdf->Write(0, 'Image Clipping using geometric functions', '', 0, 'C', 1, 0, false, false, 0);
+$pdf->write(0, 'Image Clipping using geometric functions', '', 0, 'C', 1, 0, false, false, 0);
 
 //Start Graphic Transformation
-$pdf->StartTransform();
+$pdf->startTransform();
 
 // set clipping mask
-$pdf->StarPolygon(105, 100, 30, 10, 3, 0, 1, 'CNZ');
+$pdf->starPolygon(105, 100, 30, 10, 3, 0, 1, 'CNZ');
 
 // draw jpeg image to be clipped
-$pdf->Image('images/image_demo.jpg', 75, 70, 60, 60, '', 'http://www.tcpdf.org', '', true, 72);
+$pdf->image('images/image_demo.jpg', 75, 70, 60, 60, '', 'http://www.tcpdf.org', '', true, 72);
 
 //Stop Graphic Transformation
-$pdf->StopTransform();
+$pdf->stopTransform();
 
 // ---------------------------------------------------------
 
 //Close and output PDF document
-$pdf->Output('example_034.pdf', 'I');
+$pdf->output('example_034.pdf', 'I');
 
 //============================================================+
 // END OF FILE

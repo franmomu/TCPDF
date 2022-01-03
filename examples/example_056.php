@@ -70,11 +70,11 @@ if (@file_exists(dirname(__FILE__).'/lang/eng.php')) {
 $pdf->setFont('helvetica', '', 18);
 
 // add a page
-$pdf->AddPage();
+$pdf->addPage();
 
-$pdf->Write(0, 'Example of Registration Marks, Crop Marks and Color Bars', '', 0, 'L', true, 0, false, false, 0);
+$pdf->write(0, 'Example of Registration Marks, Crop Marks and Color Bars', '', 0, 'L', true, 0, false, false, 0);
 
-$pdf->Ln(5);
+$pdf->ln(5);
 
 // color registration bars
 
@@ -110,13 +110,13 @@ $pdf->registrationMark(150, 130, 5, false, array(100,100,100,100,'All'), array(0
 
 // test registration bar with spot colors
 
-$pdf->AddSpotColor('My TCPDF Dark Green', 100, 50, 80, 45);
-$pdf->AddSpotColor('My TCPDF Light Yellow', 0, 0, 55, 0);
-$pdf->AddSpotColor('My TCPDF Black', 0, 0, 0, 100);
-$pdf->AddSpotColor('My TCPDF Red', 30, 100, 90, 10);
-$pdf->AddSpotColor('My TCPDF Green', 100, 30, 100, 0);
-$pdf->AddSpotColor('My TCPDF Blue', 100, 60, 10, 5);
-$pdf->AddSpotColor('My TCPDF Yellow', 0, 20, 100, 0);
+$pdf->addSpotColor('My TCPDF Dark Green', 100, 50, 80, 45);
+$pdf->addSpotColor('My TCPDF Light Yellow', 0, 0, 55, 0);
+$pdf->addSpotColor('My TCPDF Black', 0, 0, 0, 100);
+$pdf->addSpotColor('My TCPDF Red', 30, 100, 90, 10);
+$pdf->addSpotColor('My TCPDF Green', 100, 30, 100, 0);
+$pdf->addSpotColor('My TCPDF Blue', 100, 60, 10, 5);
+$pdf->addSpotColor('My TCPDF Yellow', 0, 20, 100, 0);
 
 $pdf->colorRegistrationBar(50, 150, 80, 10, false, true, 'ALLSPOT');
 
@@ -126,7 +126,7 @@ $pdf->registrationMarkCMYK(150, 155, 8);
 // ---------------------------------------------------------
 
 //Close and output PDF document
-$pdf->Output('example_056.pdf', 'I');
+$pdf->output('example_056.pdf', 'I');
 
 //============================================================+
 // END OF FILE

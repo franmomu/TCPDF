@@ -70,7 +70,7 @@ if (@file_exists(dirname(__FILE__).'/lang/eng.php')) {
 $pdf->setFont('times', '', 18);
 
 // add a page
-$pdf->AddPage();
+$pdf->addPage();
 
 /*
  * setVisibility() allows to restrict the rendering of some
@@ -82,7 +82,7 @@ $pdf->AddPage();
 $txt = 'You can limit the visibility of PDF objects to screen or printer by using the setVisibility() method.
 Check the print preview of this document to display the alternative text.';
 
-$pdf->Write(0, $txt, '', 0, '', true, 0, false, false, 0);
+$pdf->write(0, $txt, '', 0, '', true, 0, false, false, 0);
 
 // change font size
 $pdf->setFontSize(40);
@@ -94,7 +94,7 @@ $pdf->setTextColor(0,63,127);
 $pdf->setVisibility('screen');
 
 // write something only for screen
-$pdf->Write(0, '[This line is for display]', '', 0, 'C', true, 0, false, false, 0);
+$pdf->write(0, '[This line is for display]', '', 0, 'C', true, 0, false, false, 0);
 
 // set visibility only for print
 $pdf->setVisibility('print');
@@ -103,7 +103,7 @@ $pdf->setVisibility('print');
 $pdf->setTextColor(127,0,0);
 
 // write something only for print
-$pdf->Write(0, '[This line is for printout]', '', 0, 'C', true, 0, false, false, 0);
+$pdf->write(0, '[This line is for printout]', '', 0, 'C', true, 0, false, false, 0);
 
 // restore visibility
 $pdf->setVisibility('all');
@@ -125,7 +125,7 @@ $txt = 'Using the startLayer() method you can group PDF objects into layers.
 This text is on "layer1".';
 
 // write something
-$pdf->Write(0, $txt, '', 0, 'L', true, 0, false, false, 0);
+$pdf->write(0, $txt, '', 0, 'L', true, 0, false, false, 0);
 
 // close the current layer
 $pdf->endLayer();
@@ -133,7 +133,7 @@ $pdf->endLayer();
 // ---------------------------------------------------------
 
 //Close and output PDF document
-$pdf->Output('example_024.pdf', 'D');
+$pdf->output('example_024.pdf', 'D');
 
 //============================================================+
 // END OF FILE

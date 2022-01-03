@@ -70,7 +70,7 @@ if (@file_exists(dirname(__FILE__).'/lang/eng.php')) {
 $pdf->setFont('helvetica', '', 11);
 
 // add a page
-$pdf->AddPage();
+$pdf->addPage();
 
 $html = '<h1>Example of Spot Colors</h1>Spot colors are single ink colors, rather than colors produced by four (CMYK), six (CMYKOG) or more inks in the printing process (process colors). They can be obtained by special vendors, but often the printers have found their own way of mixing inks to match defined colors.<br /><br />As long as no open standard for spot colours exists, TCPDF users will have to buy a colour book by one of the colour manufacturers and insert the values and names of spot colours directly into the $spotcolor array in <b><em>include/tcpdf_colors.php</em></b> file, or define them using the <b><em>AddSpotColor()</em></b> method.<br /><br />Common industry standard spot colors are:<br /><span color="#008800">ANPA-COLOR, DIC, FOCOLTONE, GCMI, HKS, PANTONE, TOYO, TRUMATCH</span>.';
 
@@ -84,13 +84,13 @@ $pdf->setFont('helvetica', '', 10);
 // $c, $m, $y and $k (2nd, 3rd, 4th and 5th parameter) are the CMYK color components.
 // AddSpotColor($name, $c, $m, $y, $k)
 
-$pdf->AddSpotColor('My TCPDF Dark Green', 100, 50, 80, 45);
-$pdf->AddSpotColor('My TCPDF Light Yellow', 0, 0, 55, 0);
-$pdf->AddSpotColor('My TCPDF Black', 0, 0, 0, 100);
-$pdf->AddSpotColor('My TCPDF Red', 30, 100, 90, 10);
-$pdf->AddSpotColor('My TCPDF Green', 100, 30, 100, 0);
-$pdf->AddSpotColor('My TCPDF Blue', 100, 60, 10, 5);
-$pdf->AddSpotColor('My TCPDF Yellow', 0, 20, 100, 0);
+$pdf->addSpotColor('My TCPDF Dark Green', 100, 50, 80, 45);
+$pdf->addSpotColor('My TCPDF Light Yellow', 0, 0, 55, 0);
+$pdf->addSpotColor('My TCPDF Black', 0, 0, 0, 100);
+$pdf->addSpotColor('My TCPDF Red', 30, 100, 90, 10);
+$pdf->addSpotColor('My TCPDF Green', 100, 30, 100, 0);
+$pdf->addSpotColor('My TCPDF Blue', 100, 60, 10, 5);
+$pdf->addSpotColor('My TCPDF Yellow', 0, 20, 100, 0);
 
 // Select the spot color
 // $tint (the second parameter) is the intensity of the color (0-100).
@@ -106,41 +106,41 @@ $starty = 100;
 // print some spot colors
 
 $pdf->setFillSpotColor('My TCPDF Dark Green', 100);
-$pdf->Rect(30, $starty, 40, 20, 'DF');
-$pdf->Text(73, $starty + 8, 'My TCPDF Dark Green');
+$pdf->rect(30, $starty, 40, 20, 'DF');
+$pdf->text(73, $starty + 8, 'My TCPDF Dark Green');
 
 $starty += 24;
 $pdf->setFillSpotColor('My TCPDF Light Yellow', 100);
-$pdf->Rect(30, $starty, 40, 20, 'DF');
-$pdf->Text(73, $starty + 8, 'My TCPDF Light Yellow');
+$pdf->rect(30, $starty, 40, 20, 'DF');
+$pdf->text(73, $starty + 8, 'My TCPDF Light Yellow');
 
 
 // --- default values defined on spotcolors.php ---
 
 $starty += 24;
 $pdf->setFillSpotColor('My TCPDF Red', 100);
-$pdf->Rect(30, $starty, 40, 20, 'DF');
-$pdf->Text(73, $starty + 8, 'My TCPDF Red');
+$pdf->rect(30, $starty, 40, 20, 'DF');
+$pdf->text(73, $starty + 8, 'My TCPDF Red');
 
 $starty += 24;
 $pdf->setFillSpotColor('My TCPDF Green', 100);
-$pdf->Rect(30, $starty, 40, 20, 'DF');
-$pdf->Text(73, $starty + 8, 'My TCPDF Green');
+$pdf->rect(30, $starty, 40, 20, 'DF');
+$pdf->text(73, $starty + 8, 'My TCPDF Green');
 
 $starty += 24;
 $pdf->setFillSpotColor('My TCPDF Blue', 100);
-$pdf->Rect(30, $starty, 40, 20, 'DF');
-$pdf->Text(73, $starty + 8, 'My TCPDF Blue');
+$pdf->rect(30, $starty, 40, 20, 'DF');
+$pdf->text(73, $starty + 8, 'My TCPDF Blue');
 
 $starty += 24;
 $pdf->setFillSpotColor('My TCPDF Yellow', 100);
-$pdf->Rect(30, $starty, 40, 20, 'DF');
-$pdf->Text(73, $starty + 8, 'My TCPDF Yellow');
+$pdf->rect(30, $starty, 40, 20, 'DF');
+$pdf->text(73, $starty + 8, 'My TCPDF Yellow');
 
 // ---------------------------------------------------------
 
 //Close and output PDF document
-$pdf->Output('example_037.pdf', 'I');
+$pdf->output('example_037.pdf', 'I');
 
 //============================================================+
 // END OF FILE

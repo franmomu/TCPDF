@@ -70,7 +70,7 @@ if (@file_exists(dirname(__FILE__).'/lang/eng.php')) {
 $pdf->setFont('dejavusans', '', 10);
 
 // add a page
-$pdf->AddPage();
+$pdf->addPage();
 
 // writeHTML($html, $ln=true, $fill=false, $reseth=false, $cell=false, $align='')
 // writeHTMLCell($w, $h, $x, $y, $html='', $border=0, $ln=0, $fill=0, $reseth=true, $align='', $autopadding=true)
@@ -146,7 +146,7 @@ $pdf->lastPage();
 // Print a table
 
 // add a page
-$pdf->AddPage();
+$pdf->addPage();
 
 // create some HTML content
 $subtable = '<table border="1" cellspacing="6" cellpadding="4"><tr><td>a</td><td>b</td></tr><tr><td>c</td><td>d</td></tr></table>';
@@ -207,7 +207,7 @@ $pdf->lastPage();
 // Print a table
 
 // add a page
-$pdf->AddPage();
+$pdf->addPage();
 
 // create some HTML content
 $html = '<h1>Image alignments on HTML table</h1>
@@ -231,7 +231,7 @@ $pdf->lastPage();
 // Print all HTML colors
 
 // add a page
-$pdf->AddPage();
+$pdf->addPage();
 
 $textcolors = '<h1>HTML Text Colors</h1>';
 $bgcolors = '<hr /><h1>HTML Background Colors</h1>';
@@ -272,7 +272,7 @@ $pdf->writeHTML($html, true, false, true, false, '');
 // test pre tag
 
 // add a page
-$pdf->AddPage();
+$pdf->addPage();
 
 $html = <<<EOF
 <div style="background-color:#880000;color:white;">
@@ -300,7 +300,7 @@ $pdf->writeHTML($html, true, false, true, false, '');
 // test custom bullet points for list
 
 // add a page
-$pdf->AddPage();
+$pdf->addPage();
 
 $html = <<<EOF
 <h1>Test custom bullet image for list items</h1>
@@ -323,7 +323,7 @@ $pdf->lastPage();
 // ---------------------------------------------------------
 
 //Close and output PDF document
-$pdf->Output('example_006.pdf', 'I');
+$pdf->output('example_006.pdf', 'I');
 
 //============================================================+
 // END OF FILE

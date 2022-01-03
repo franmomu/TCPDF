@@ -95,29 +95,29 @@ $pdf->setViewerPreferences($preferences);
 $pdf->setFont('times', '', 14);
 
 // add a page
-$pdf->AddPage();
+$pdf->addPage();
 
 // print a line
-$pdf->Cell(0, 12, 'DISPLAY PREFERENCES - PAGE 1', 1, 1, 'C');
+$pdf->cell(0, 12, 'DISPLAY PREFERENCES - PAGE 1', 1, 1, 'C');
 
-$pdf->Ln(5);
+$pdf->ln(5);
 
-$pdf->Write(0, 'You can use the setViewerPreferences() method to change viewer preferences.', '', 0, 'L', true, 0, false, false, 0);
+$pdf->write(0, 'You can use the setViewerPreferences() method to change viewer preferences.', '', 0, 'L', true, 0, false, false, 0);
 
 // add a page
-$pdf->AddPage();
+$pdf->addPage();
 // print a line
-$pdf->Cell(0, 12, 'DISPLAY PREFERENCES - PAGE 2', 0, 0, 'C');
+$pdf->cell(0, 12, 'DISPLAY PREFERENCES - PAGE 2', 0, 0, 'C');
 
 // add a page
-$pdf->AddPage();
+$pdf->addPage();
 // print a line
-$pdf->Cell(0, 12, 'DISPLAY PREFERENCES - PAGE 3', 0, 0, 'C');
+$pdf->cell(0, 12, 'DISPLAY PREFERENCES - PAGE 3', 0, 0, 'C');
 
 // ---------------------------------------------------------
 
 //Close and output PDF document
-$pdf->Output('example_029.pdf', 'D');
+$pdf->output('example_029.pdf', 'D');
 
 //============================================================+
 // END OF FILE

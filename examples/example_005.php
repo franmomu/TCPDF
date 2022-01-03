@@ -70,7 +70,7 @@ if (@file_exists(dirname(__FILE__).'/lang/eng.php')) {
 $pdf->setFont('times', '', 10);
 
 // add a page
-$pdf->AddPage();
+$pdf->addPage();
 
 // set cell padding
 $pdf->setCellPaddings(1, 1, 1, 1);
@@ -87,23 +87,23 @@ $pdf->setFillColor(255, 255, 127);
 $txt = 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.';
 
 // Multicell test
-$pdf->MultiCell(55, 5, '[LEFT] '.$txt, 1, 'L', 1, 0, '', '', true);
-$pdf->MultiCell(55, 5, '[RIGHT] '.$txt, 1, 'R', 0, 1, '', '', true);
-$pdf->MultiCell(55, 5, '[CENTER] '.$txt, 1, 'C', 0, 0, '', '', true);
-$pdf->MultiCell(55, 5, '[JUSTIFY] '.$txt."\n", 1, 'J', 1, 2, '' ,'', true);
-$pdf->MultiCell(55, 5, '[DEFAULT] '.$txt, 1, '', 0, 1, '', '', true);
+$pdf->multiCell(55, 5, '[LEFT] '.$txt, 1, 'L', 1, 0, '', '', true);
+$pdf->multiCell(55, 5, '[RIGHT] '.$txt, 1, 'R', 0, 1, '', '', true);
+$pdf->multiCell(55, 5, '[CENTER] '.$txt, 1, 'C', 0, 0, '', '', true);
+$pdf->multiCell(55, 5, '[JUSTIFY] '.$txt."\n", 1, 'J', 1, 2, '' ,'', true);
+$pdf->multiCell(55, 5, '[DEFAULT] '.$txt, 1, '', 0, 1, '', '', true);
 
-$pdf->Ln(4);
+$pdf->ln(4);
 
 // set color for background
 $pdf->setFillColor(220, 255, 220);
 
 // Vertical alignment
-$pdf->MultiCell(55, 40, '[VERTICAL ALIGNMENT - TOP] '.$txt, 1, 'J', 1, 0, '', '', true, 0, false, true, 40, 'T');
-$pdf->MultiCell(55, 40, '[VERTICAL ALIGNMENT - MIDDLE] '.$txt, 1, 'J', 1, 0, '', '', true, 0, false, true, 40, 'M');
-$pdf->MultiCell(55, 40, '[VERTICAL ALIGNMENT - BOTTOM] '.$txt, 1, 'J', 1, 1, '', '', true, 0, false, true, 40, 'B');
+$pdf->multiCell(55, 40, '[VERTICAL ALIGNMENT - TOP] '.$txt, 1, 'J', 1, 0, '', '', true, 0, false, true, 40, 'T');
+$pdf->multiCell(55, 40, '[VERTICAL ALIGNMENT - MIDDLE] '.$txt, 1, 'J', 1, 0, '', '', true, 0, false, true, 40, 'M');
+$pdf->multiCell(55, 40, '[VERTICAL ALIGNMENT - BOTTOM] '.$txt, 1, 'J', 1, 1, '', '', true, 0, false, true, 40, 'B');
 
-$pdf->Ln(4);
+$pdf->ln(4);
 
 // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
@@ -116,7 +116,7 @@ $txt = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. In sed imperdie
 Fusce et felis vitae diam lobortis sollicitudin. Aenean tincidunt accumsan nisi, id vehicula quam laoreet elementum. Phasellus egestas interdum erat, et viverra ipsum ultricies ac. Praesent sagittis augue at augue volutpat eleifend. Cras nec orci neque. Mauris bibendum posuere blandit. Donec feugiat mollis dui sit amet pellentesque. Sed a enim justo. Donec tincidunt, nisl eget elementum aliquam, odio ipsum ultrices quam, eu porttitor ligula urna at lorem. Donec varius, eros et convallis laoreet, ligula tellus consequat felis, ut ornare metus tellus sodales velit. Duis sed diam ante. Ut rutrum malesuada massa, vitae consectetur ipsum rhoncus sed. Suspendisse potenti. Pellentesque a congue massa.';
 
 // print a blox of text using multicell()
-$pdf->MultiCell(80, 5, $txt."\n", 1, 'J', 1, 1, '' ,'', true);
+$pdf->multiCell(80, 5, $txt."\n", 1, 'J', 1, 1, '' ,'', true);
 
 // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
@@ -126,7 +126,7 @@ $pdf->MultiCell(80, 5, $txt."\n", 1, 'J', 1, 1, '' ,'', true);
 $pdf->setFillColor(255, 235, 235);
 
 // Fit text on cell by reducing font size
-$pdf->MultiCell(55, 60, '[FIT CELL] '.$txt."\n", 1, 'J', 1, 1, 125, 145, true, 0, false, true, 60, 'M', true);
+$pdf->multiCell(55, 60, '[FIT CELL] '.$txt."\n", 1, 'J', 1, 1, 125, 145, true, 0, false, true, 60, 'M', true);
 
 // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
@@ -143,7 +143,7 @@ $pdf->setCellPaddings(2, 4, 6, 8);
 
 $txt = "CUSTOM PADDING:\nLeft=2, Top=4, Right=6, Bottom=8\nLorem ipsum dolor sit amet, consectetur adipiscing elit. In sed imperdiet lectus. Phasellus quis velit velit, non condimentum quam. Sed neque urna, ultrices ac volutpat vel, laoreet vitae augue.\n";
 
-$pdf->MultiCell(55, 5, $txt, 1, 'J', 1, 2, 125, 210, true);
+$pdf->multiCell(55, 5, $txt, 1, 'J', 1, 2, 125, 210, true);
 
 // move pointer to last page
 $pdf->lastPage();
@@ -151,7 +151,7 @@ $pdf->lastPage();
 // ---------------------------------------------------------
 
 //Close and output PDF document
-$pdf->Output('example_005.pdf', 'I');
+$pdf->output('example_005.pdf', 'I');
 
 //============================================================+
 // END OF FILE

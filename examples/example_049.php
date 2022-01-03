@@ -70,7 +70,7 @@ if (@file_exists(dirname(__FILE__).'/lang/eng.php')) {
 $pdf->setFont('helvetica', '', 10);
 
 // add a page
-$pdf->AddPage();
+$pdf->addPage();
 
 
 /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
@@ -119,7 +119,7 @@ $pdf->lastPage();
 // ---------------------------------------------------------
 
 //Close and output PDF document
-$pdf->Output('example_049.pdf', 'I');
+$pdf->output('example_049.pdf', 'I');
 
 //============================================================+
 // END OF FILE

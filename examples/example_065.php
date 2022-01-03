@@ -74,7 +74,7 @@ $pdf->setFont('helvetica', '', 14, '', true);
 
 // Add a page
 // This method has several options, check the source code documentation for more information.
-$pdf->AddPage();
+$pdf->addPage();
 
 // Set some content to print
 $html = <<<EOD
@@ -91,7 +91,7 @@ $pdf->writeHTMLCell(0, 0, '', '', $html, 0, 1, 0, true, '', true);
 
 // Close and output PDF document
 // This method has several options, check the source code documentation for more information.
-$pdf->Output('example_065.pdf', 'I');
+$pdf->output('example_065.pdf', 'I');
 
 //============================================================+
 // END OF FILE

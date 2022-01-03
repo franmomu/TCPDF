@@ -70,10 +70,10 @@ if (@file_exists(dirname(__FILE__).'/lang/eng.php')) {
 $pdf->setFont('helvetica', 'B', 16);
 
 // add a page
-$pdf->AddPage();
+$pdf->addPage();
 
-$pdf->Write(0, 'Example of Text Stretching and Spacing (tracking)', '', 0, 'L', true, 0, false, false, 0);
-$pdf->Ln(5);
+$pdf->write(0, 'Example of Text Stretching and Spacing (tracking)', '', 0, 'L', true, 0, false, false, 0);
+$pdf->ln(5);
 
 // create several cells to display all cases of stretching and spacing combinations.
 
@@ -90,11 +90,11 @@ foreach ($fonts as $fkey => $font) {
 				$pdf->setFontStretching($stretching);
 				$pdf->setFontSpacing($spacing);
 				$txt = $align_name.' | Stretching = '.$stretching.'% | Spacing = '.sprintf('%+.3F', $spacing).'mm';
-				$pdf->Cell(0, 0, $txt, 1, 1, $align_mode);
+				$pdf->cell(0, 0, $txt, 1, 1, $align_mode);
 			}
 		}
 	}
-	$pdf->AddPage();
+	$pdf->addPage();
 }
 
 
@@ -109,7 +109,7 @@ foreach ($fonts as $fkey => $font) {
 			}
 		}
 		if (!(($fkey == 1) AND ($align_mode == 'J'))) {
-			$pdf->AddPage();
+			$pdf->addPage();
 		}
 	}
 }
@@ -124,7 +124,7 @@ $pdf->setFontSpacing(0);
 // ---------------------------------------------------------
 
 //Close and output PDF document
-$pdf->Output('example_063.pdf', 'I');
+$pdf->output('example_063.pdf', 'I');
 
 //============================================================+
 // END OF FILE

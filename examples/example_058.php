@@ -70,24 +70,24 @@ if (@file_exists(dirname(__FILE__).'/lang/eng.php')) {
 $pdf->setFont('helvetica', '', 10);
 
 // add a page
-$pdf->AddPage();
+$pdf->addPage();
 
 // NOTE: Uncomment the following line to rasterize SVG image using the ImageMagick library.
 //$pdf->setRasterizeVectorImages(true);
 
-$pdf->ImageSVG($file='images/testsvg.svg', $x=15, $y=30, $w='', $h='', $link='http://www.tcpdf.org', $align='', $palign='', $border=1, $fitonpage=false);
+$pdf->imageSVG($file='images/testsvg.svg', $x=15, $y=30, $w='', $h='', $link='http://www.tcpdf.org', $align='', $palign='', $border=1, $fitonpage=false);
 
-$pdf->ImageSVG($file='images/tux.svg', $x=30, $y=100, $w='', $h=100, $link='', $align='', $palign='', $border=0, $fitonpage=false);
+$pdf->imageSVG($file='images/tux.svg', $x=30, $y=100, $w='', $h=100, $link='', $align='', $palign='', $border=0, $fitonpage=false);
 
 $pdf->setFont('helvetica', '', 8);
 $pdf->setY(195);
 $txt = '© The copyright holder of the above Tux image is Larry Ewing, allows anyone to use it for any purpose, provided that the copyright holder is properly attributed. Redistribution, derivative work, commercial use, and all other use is permitted.';
-$pdf->Write(0, $txt, '', 0, 'L', true, 0, false, false, 0);
+$pdf->write(0, $txt, '', 0, 'L', true, 0, false, false, 0);
 
 // ---------------------------------------------------------
 
 //Close and output PDF document
-$pdf->Output('example_058.pdf', 'D');
+$pdf->output('example_058.pdf', 'D');
 
 //============================================================+
 // END OF FILE

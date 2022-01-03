@@ -31,25 +31,25 @@ require_once('tcpdf_include.php');
 // extend TCPF with custom functions
 class MYPDF extends TCPDF {
 
-	public function MultiRow($left, $right) {
+	public function multiRow($left, $right) {
 		// MultiCell($w, $h, $txt, $border=0, $align='J', $fill=0, $ln=1, $x='', $y='', $reseth=true, $stretch=0)
 
 		$page_start = $this->getPage();
-		$y_start = $this->GetY();
+		$y_start = $this->getY();
 
 		// write the left cell
-		$this->MultiCell(40, 0, $left, 1, 'R', 1, 2, '', '', true, 0);
+		$this->multiCell(40, 0, $left, 1, 'R', 1, 2, '', '', true, 0);
 
 		$page_end_1 = $this->getPage();
-		$y_end_1 = $this->GetY();
+		$y_end_1 = $this->getY();
 
 		$this->setPage($page_start);
 
 		// write the right cell
-		$this->MultiCell(0, 0, $right, 1, 'J', 0, 1, $this->GetX() ,$y_start, true, 0);
+		$this->multiCell(0, 0, $right, 1, 'J', 0, 1, $this->getX() ,$y_start, true, 0);
 
 		$page_end_2 = $this->getPage();
-		$y_end_2 = $this->GetY();
+		$y_end_2 = $this->getY();
 
 		// set the new row position by case
 		if (max($page_end_1,$page_end_2) == $page_start) {
@@ -63,7 +63,7 @@ class MYPDF extends TCPDF {
 		}
 
 		$this->setPage(max($page_end_1,$page_end_2));
-		$this->setXY($this->GetX(),$ynew);
+		$this->setXY($this->getX(),$ynew);
 	}
 
 }
@@ -110,11 +110,11 @@ if (@file_exists(dirname(__FILE__).'/lang/eng.php')) {
 // set font
 $pdf->setFont('helvetica', '', 20);
 // add a page
-$pdf->AddPage();
+$pdf->addPage();
 
-$pdf->Write(0, 'Example of text layout using Multicell()', '', 0, 'L', true, 0, false, false, 0);
+$pdf->write(0, 'Example of text layout using Multicell()', '', 0, 'L', true, 0, false, false, 0);
 
-$pdf->Ln(5);
+$pdf->ln(5);
 
 $pdf->setFont('times', '', 9);
 
@@ -130,7 +130,7 @@ Fusce et felis vitae diam lobortis sollicitudin. Aenean tincidunt accumsan nisi,
 
 // print some rows just as example
 for ($i = 0; $i < 10; ++$i) {
-	$pdf->MultiRow('Row '.($i+1), $text."\n");
+	$pdf->multiRow('Row '.($i+1), $text."\n");
 }
 
 // reset pointer to the last page
@@ -139,7 +139,7 @@ $pdf->lastPage();
 // ---------------------------------------------------------
 
 //Close and output PDF document
-$pdf->Output('example_020.pdf', 'I');
+$pdf->output('example_020.pdf', 'I');
 
 //============================================================+
 // END OF FILE

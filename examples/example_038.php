@@ -70,22 +70,22 @@ if (@file_exists(dirname(__FILE__).'/lang/eng.php')) {
 $pdf->setFont('helvetica', '', 20);
 
 // add a page
-$pdf->AddPage();
+$pdf->addPage();
 
 $txt = 'Example of CID-0 CJK unembedded font.
 To display extended text you must have CJK fonts installed for your PDF reader:';
-$pdf->Write(0, $txt, '', 0, 'L', true, 0, false, false, 0);
+$pdf->write(0, $txt, '', 0, 'L', true, 0, false, false, 0);
 
 // set font
 $pdf->setFont('cid0jp', '', 40);
 
 $txt = 'こんにちは世界';
-$pdf->Write(0, $txt, '', 0, 'L', true, 0, false, false, 0);
+$pdf->write(0, $txt, '', 0, 'L', true, 0, false, false, 0);
 
 // ---------------------------------------------------------
 
 //Close and output PDF document
-$pdf->Output('example_038.pdf', 'I');
+$pdf->output('example_038.pdf', 'I');
 
 //============================================================+
 // END OF FILE

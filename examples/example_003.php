@@ -32,24 +32,24 @@ require_once('tcpdf_include.php');
 class MYPDF extends TCPDF {
 
 	//Page header
-	public function Header() {
+	public function header() {
 		// Logo
 		$image_file = K_PATH_IMAGES.'logo_example.jpg';
-		$this->Image($image_file, 10, 10, 15, '', 'JPG', '', 'T', false, 300, '', false, false, 0, false, false, false);
+		$this->image($image_file, 10, 10, 15, '', 'JPG', '', 'T', false, 300, '', false, false, 0, false, false, false);
 		// Set font
 		$this->setFont('helvetica', 'B', 20);
 		// Title
-		$this->Cell(0, 15, '<< TCPDF Example 003 >>', 0, false, 'C', 0, '', 0, false, 'M', 'M');
+		$this->cell(0, 15, '<< TCPDF Example 003 >>', 0, false, 'C', 0, '', 0, false, 'M', 'M');
 	}
 
 	// Page footer
-	public function Footer() {
+	public function footer() {
 		// Position at 15 mm from bottom
 		$this->setY(-15);
 		// Set font
 		$this->setFont('helvetica', 'I', 8);
 		// Page number
-		$this->Cell(0, 10, 'Page '.$this->getAliasNumPage().'/'.$this->getAliasNbPages(), 0, false, 'C', 0, '', 0, false, 'T', 'M');
+		$this->cell(0, 10, 'Page '.$this->getAliasNumPage().'/'.$this->getAliasNbPages(), 0, false, 'C', 0, '', 0, false, 'T', 'M');
 	}
 }
 
@@ -96,7 +96,7 @@ if (@file_exists(dirname(__FILE__).'/lang/eng.php')) {
 $pdf->setFont('times', 'BI', 12);
 
 // add a page
-$pdf->AddPage();
+$pdf->addPage();
 
 // set some text to print
 $txt = <<<EOD
@@ -106,12 +106,12 @@ Custom page header and footer are defined by extending the TCPDF class and overr
 EOD;
 
 // print a block of text using Write()
-$pdf->Write(0, $txt, '', 0, 'C', true, 0, false, false, 0);
+$pdf->write(0, $txt, '', 0, 'C', true, 0, false, false, 0);
 
 // ---------------------------------------------------------
 
 //Close and output PDF document
-$pdf->Output('example_003.pdf', 'I');
+$pdf->output('example_003.pdf', 'I');
 
 //============================================================+
 // END OF FILE

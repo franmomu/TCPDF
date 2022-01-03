@@ -70,20 +70,20 @@ if (@file_exists(dirname(__FILE__).'/lang/eng.php')) {
 $pdf->setFont('times', '', 16);
 
 // add a page
-$pdf->AddPage();
+$pdf->addPage();
 
 
 $txt = 'Example of File Attachment.
 Double click on the icon to open the attached file.';
-$pdf->Write(0, $txt, '', 0, 'L', true, 0, false, false, 0);
+$pdf->write(0, $txt, '', 0, 'L', true, 0, false, false, 0);
 
 // attach an external file
-$pdf->Annotation(85, 27, 5, 5, 'text file', array('Subtype'=>'FileAttachment', 'Name' => 'PushPin', 'FS' => 'data/utf8test.txt'));
+$pdf->annotation(85, 27, 5, 5, 'text file', array('Subtype'=>'FileAttachment', 'Name' => 'PushPin', 'FS' => 'data/utf8test.txt'));
 
 // ---------------------------------------------------------
 
 //Close and output PDF document
-$pdf->Output('example_041.pdf', 'D');
+$pdf->output('example_041.pdf', 'D');
 
 //============================================================+
 // END OF FILE

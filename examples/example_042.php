@@ -72,30 +72,30 @@ if (@file_exists(dirname(__FILE__).'/lang/eng.php')) {
 $pdf->setFont('helvetica', '', 18);
 
 // add a page
-$pdf->AddPage();
+$pdf->addPage();
 
 // create background text
 $background_text = str_repeat('TCPDF test PNG Alpha Channel ', 50);
-$pdf->MultiCell(0, 5, $background_text, 0, 'J', 0, 2, '', '', true, 0, false);
+$pdf->multiCell(0, 5, $background_text, 0, 'J', 0, 2, '', '', true, 0, false);
 
 // --- Method (A) ------------------------------------------
 // the Image() method recognizes the alpha channel embedded on the image:
 
-$pdf->Image('images/image_with_alpha.png', 50, 50, 100, '', '', 'http://www.tcpdf.org', '', false, 300);
+$pdf->image('images/image_with_alpha.png', 50, 50, 100, '', '', 'http://www.tcpdf.org', '', false, 300);
 
 // --- Method (B) ------------------------------------------
 // provide image + separate 8-bit mask
 
 // first embed mask image (w, h, x and y will be ignored, the image will be scaled to the target image's size)
-$mask = $pdf->Image('images/alpha.png', 50, 140, 100, '', '', '', '', false, 300, '', true);
+$mask = $pdf->image('images/alpha.png', 50, 140, 100, '', '', '', '', false, 300, '', true);
 
 // embed image, masked with previously embedded mask
-$pdf->Image('images/img.png', 50, 140, 100, '', '', 'http://www.tcpdf.org', '', false, 300, '', false, $mask);
+$pdf->image('images/img.png', 50, 140, 100, '', '', 'http://www.tcpdf.org', '', false, 300, '', false, $mask);
 
 // ---------------------------------------------------------
 
 //Close and output PDF document
-$pdf->Output('example_042.pdf', 'I');
+$pdf->output('example_042.pdf', 'I');
 
 //============================================================+
 // END OF FILE
